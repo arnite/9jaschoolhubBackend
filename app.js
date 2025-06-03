@@ -10,9 +10,13 @@ const hpp = require('hpp');
 const compression = require('compression');
 const morgan = require('morgan');
 const globalErrorhandler = require('./controllers/errorController');
+const DBconnect = require('./config/DBconnect');
 
 // Configuring environmental variable
 dotenv.config({ path: './.env' });
+
+//database connection
+DBconnect();
 
 //Setting up security middleware
 app.use(helmet());

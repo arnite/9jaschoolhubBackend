@@ -1,22 +1,26 @@
-const dotenv = require('dotenv');
-const express = require('express');
+import { config } from 'dotenv';
+import express, { json } from 'express';
+import helmet from 'helmet';
+import cors from 'cors';
+import dotenv from "dotenv"
+import rateLimit from 'express-rate-limit';
+import mongoSanitize from 'express-mongo-sanitize';
+import xss from 'xss-clean';
+import hpp from 'hpp';
+import DBconnect from './config/DBconnect.js'
+import compression from 'compression';
+// import morgan from 'morgan';
+// import globalErrorhandler from './controllers/errorController';
+
+dotenv.config();
+
+DBconnect()
+
 const app = express();
-const helmet = require('helmet');
-const cors = require('cors');
-const rateLimit = require('express-rate-limit');
-const mongoSanitize = require('express-mongo-sanitize');
-const xss = require('xss-clean');
-const hpp = require('hpp');
-const compression = require('compression');
-const morgan = require('morgan');
-const globalErrorhandler = require('./controllers/errorController');
-const DBconnect = require('./config/DBconnect');
+
 
 // Configuring environmental variable
-dotenv.config({ path: './.env' });
-
-//database connection
-DBconnect();
+config({ path: './.env' });
 
 //Setting up security middleware
 app.use(helmet());
@@ -34,7 +38,7 @@ app.use(
 );
 
 // Enabling body parser
-app.use(express.json({ limit: '10kb' }));
+app.use(json({ limit: '10kb' }));
 
 // Data sanitiazation
 app.use(mongoSanitize());
@@ -45,18 +49,18 @@ app.use(hpp());
 app.use(compression());
 
 // Enabling morgan
-if (process.env.NODE_ENV === 'development') {
-  app.use(morgan('dev'));
-} else if (process.env.NODE_ENV === 'production') {
-  app.use(morgan('combined'));
-}
+// if (process.env.NODE_ENV === 'development') {
+//   app.use(morgan('dev'));
+// } else if (process.env.NODE_ENV === 'production') {
+//   app.use(morgan('combined'));
+// }
 
 // Routers
 
 // Invalid Routes
 
 // Error handling
-app.use(globalErrorhandler);
+// app.use(globalErrorhandler);
 
 // Starting the server
 const PORT = process.env.PORT || 3000;

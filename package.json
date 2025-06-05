@@ -4,7 +4,10 @@
   "description": "9jaSchoolsHub is a centralized platform that provides easy access to up-to-date information about Nigerian universities. It helps users find details on institutions, courses, admission requirements, and more, making it easier for prospective students and academic stakeholders to search, compare, and make informed decisions.",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "start": "node app.js",
+  "dev": "nodemon app.js",
+  "data:import": "node models/seed",
+  "data:destroy": "node models/seed -d"
   },
   "type": "module",
   "author": "Backend team @SQWADS",

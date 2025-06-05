@@ -23,7 +23,8 @@ const sendErrorProd = (err, res) => {
   }
 };
 
-export const globalErrorhandler = (err, req, res, next) => {
+
+export default (err, req, res, next) => {
   err.statusCode = err.statusCode || 500;
   err.status = err.status || 'error';
 

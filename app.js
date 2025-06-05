@@ -1,22 +1,27 @@
-import dotenv from 'dotenv';
-import express from 'express';
-const app = express();
+
+import { config } from 'dotenv';
+import express, { json } from 'express';
 import helmet from 'helmet';
 import cors from 'cors';
+import dotenv from "dotenv"
 import rateLimit from 'express-rate-limit';
 import mongoSanitize from 'express-mongo-sanitize';
 import xss from 'xss-clean';
 import hpp from 'hpp';
+import DBconnect from './config/DBconnect.js'
 import compression from 'compression';
 import morgan from 'morgan';
-import { globalErrorhandler } from './controllers/errorController.js';
-import DBconnect from './config/DBconnect.js';
+import globalErrorhandler from './controllers/errorController';
+
+dotenv.config();
+
+DBconnect()
+
+const app = express();
+
 
 // Configuring environmental variable
-dotenv.config({ path: './.env' });
-
-//database connection
-DBconnect();
+config({ path: './.env' });
 
 //Setting up security middleware
 app.use(helmet());
@@ -34,7 +39,7 @@ app.use(
 );
 
 // Enabling body parser
-app.use(express.json({ limit: '10kb' }));
+app.use(json({ limit: '10kb' }));
 
 // Data sanitiazation
 app.use(mongoSanitize());
@@ -44,12 +49,12 @@ app.use(hpp());
 // Enabling compression
 app.use(compression());
 
-// Enabling morgan
-if (process.env.NODE_ENV === 'development') {
-  app.use(morgan('dev'));
-} else if (process.env.NODE_ENV === 'production') {
-  app.use(morgan('combined'));
-}
+//Enabling morgan
+ if (process.env.NODE_ENV === 'development') {
+   app.use(morgan('dev'));
+ } else if (process.env.NODE_ENV === 'production') {
+   app.use(morgan('combined'));
+ }
 
 // Routers
 

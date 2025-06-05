@@ -9,8 +9,8 @@ import xss from 'xss-clean';
 import hpp from 'hpp';
 import DBconnect from './config/DBconnect.js'
 import compression from 'compression';
-// import morgan from 'morgan';
-// import globalErrorhandler from './controllers/errorController';
+import morgan from 'morgan';
+import globalErrorhandler from './controllers/errorController';
 
 dotenv.config();
 
@@ -48,19 +48,19 @@ app.use(hpp());
 // Enabling compression
 app.use(compression());
 
-// Enabling morgan
-// if (process.env.NODE_ENV === 'development') {
-//   app.use(morgan('dev'));
-// } else if (process.env.NODE_ENV === 'production') {
-//   app.use(morgan('combined'));
-// }
+//Enabling morgan
+ if (process.env.NODE_ENV === 'development') {
+   app.use(morgan('dev'));
+ } else if (process.env.NODE_ENV === 'production') {
+   app.use(morgan('combined'));
+ }
 
 // Routers
 
 // Invalid Routes
 
 // Error handling
-// app.use(globalErrorhandler);
+app.use(globalErrorhandler);
 
 // Starting the server
 const PORT = process.env.PORT || 3000;

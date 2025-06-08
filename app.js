@@ -1,16 +1,17 @@
+
 import { config } from 'dotenv';
 import express, { json } from 'express';
 import helmet from 'helmet';
 import cors from 'cors';
 import dotenv from "dotenv"
 import rateLimit from 'express-rate-limit';
-import mongoSanitize from 'express-mongo-sanitize';
-import xss from 'xss-clean';
-import hpp from 'hpp';
+// import xss from 'xss-clean';
+// import hpp from 'hpp';
 import DBconnect from './config/DBconnect.js'
-import compression from 'compression';
+// import compression from 'compression';
 // import morgan from 'morgan';
-// import globalErrorhandler from './controllers/errorController';
+import globalErrorhandler from './controllers/errorController.js';
+import universityRouter from './routes/universityRoute.js';
 
 dotenv.config();
 
@@ -41,26 +42,26 @@ app.use(
 app.use(json({ limit: '10kb' }));
 
 // Data sanitiazation
-app.use(mongoSanitize());
-app.use(xss());
-app.use(hpp());
+// app.use(xss());
+// app.use(hpp());
 
 // Enabling compression
-app.use(compression());
+// app.use(compression());
 
-// Enabling morgan
-// if (process.env.NODE_ENV === 'development') {
-//   app.use(morgan('dev'));
-// } else if (process.env.NODE_ENV === 'production') {
-//   app.use(morgan('combined'));
-// }
+//Enabling morgan
+//  if (process.env.NODE_ENV === 'development') {
+//    app.use(morgan('dev'));
+//  } else if (process.env.NODE_ENV === 'production') {
+//    app.use(morgan('combined'));
+//  }
 
 // Routers
+app.use('/universityModel', universityRouter);
 
 // Invalid Routes
 
 // Error handling
-// app.use(globalErrorhandler);
+app.use(globalErrorhandler);
 
 // Starting the server
 const PORT = process.env.PORT || 3000;

@@ -91,4 +91,4 @@ This collection includes all the available endpoints for the API and their respe
 
 ## 7. Deployed App
 
-You can view the deplyed app here.
+Not yet deployed.

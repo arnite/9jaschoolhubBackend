@@ -70,10 +70,10 @@ The server will run on the following URL depending on the environment:
 - **POST `/universityRoute`**
   _Create University_
 
-- **PATCH `/universityRoute/:id**
+- **PATCH `/universityRoute/:id`**
   _Update University by id_
 
-- **DELETE `/universityRoute/:id**
+- **DELETE `/universityRoute/:id`**
   _Delete University by id_
 
 ## 6. API Documentation
@@ -90,4 +90,5 @@ You can find the Postman collection for this API [here](https://documenter.getpo
 This collection includes all the available endpoints for the API and their respective methods, parameters, and expected responses.
 
 ## 7. Deployed App
+
 You can view the deplyed app here.

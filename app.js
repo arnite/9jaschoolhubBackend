@@ -1,13 +1,12 @@
-
 import { config } from 'dotenv';
 import express, { json } from 'express';
 import helmet from 'helmet';
 import cors from 'cors';
-import dotenv from "dotenv"
+import dotenv from 'dotenv';
 import rateLimit from 'express-rate-limit';
 // import xss from 'xss-clean';
 // import hpp from 'hpp';
-import DBconnect from './config/DBconnect.js'
+import DBconnect from './config/DBconnect.js';
 // import compression from 'compression';
 // import morgan from 'morgan';
 import globalErrorhandler from './controllers/errorController.js';
@@ -15,10 +14,9 @@ import universityRouter from './routes/universityRoute.js';
 
 dotenv.config();
 
-DBconnect()
+DBconnect();
 
 const app = express();
-
 
 // Configuring environmental variable
 config({ path: './.env' });
@@ -56,7 +54,7 @@ app.use(json({ limit: '10kb' }));
 //  }
 
 // Routers
-app.use('/universityModel', universityRouter);
+app.use('/universityRoute', universityRouter);
 
 // Invalid Routes
 

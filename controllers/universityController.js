@@ -3,6 +3,7 @@ import universityModel from '../models/universityModel.js';
 import AppError from '../utils/appError.js';
 import { isValidId } from '../utils/validId.js';
 import { validateUniversity } from '../validators/universityValidator.js';
+import APIFeatures from '../utils/apiFeatures.js';
 
 // Create a university
 export const createUniversity = catchAsync(async (req, res, next) => {
@@ -33,15 +34,18 @@ export const createUniversity = catchAsync(async (req, res, next) => {
 
 // Get all universities
 export const getAllUniversities = catchAsync(async (req, res, next) => {
-  const universities = await universityModel.find();
+  const feautures = new APIFeatures(universityModel.find(), req.query).filter().sort().paginate()
 
-  if (!universities || universities.length <= 0) {
+  const doc = await feautures.query;
+
+  if (!doc || doc.length <= 0) {
     return next(new AppError('No university found', 404));
   }
 
   return res.status(200).json({
     status: 'success',
-    data: { universities },
+    count: doc.length,
+    data: { doc },
   });
 });
 

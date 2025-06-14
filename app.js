@@ -60,8 +60,6 @@ app.use('/universityRoute', universityRouter);
 app.use('/searchProgramme', searchProgrammeRouter);
 app.use('/searchUniversity', searchUniversityRouter);
 
-// Invalid Routes
-
 // Error handling
 app.use(globalErrorhandler);
 

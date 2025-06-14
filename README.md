@@ -18,14 +18,29 @@
 - **Version Control**: Git, GitHub for version control
 - **Deployment**: Render for deployment; MongoDB Atlas for the cloud database
 
-## 4. Getting Started
+## 4. Live Documentation
 
-### 4.1 Prerequisites
+You can view and test the API via Postman using the link below:
+
+[Postman Docs (Public Link)](https://documenter.getpostman.com/view/45852787/2sB2x6msLJ)
+
+### How to Use the Postman Collection:
+
+1. Click on the link to open the Postman collection.
+2. Import the collection into your Postman app.
+3. Set up any required environment variables or authentication tokens.
+4. Run the requests to interact with the API.
+
+This collection includes all the available endpoints for the API and their respective methods, parameters, and expected responses.
+
+## 5. Getting Started
+
+### 5.1 Prerequisites
 
 - [Node.js](https://nodejs.org/) - Ensure you have Node.js installed on your system.
 - [MongoDB](https://www.mongodb.com/) - You need a MongoDB instance for your database.
 
-### 4.2 Installation
+### 5.2 Installation
 
 1. Clone the repository:
 
@@ -60,35 +75,46 @@ The server will run on the following URL depending on the environment:
 - **Local (development)**: `http://localhost:3000`
 - **Production (live server)**: The server URL will be defined based on your environment configuration.
 
-## 5. API Endpoints
+## 6. API Endpoints
 
 ### **UNIVERSITIES MANAGEMENT**
 
-- **GET `/universityRoute`**
-  _Retrieve all University_
+| Method | Endpoint               | Description               |
+| ------ | ---------------------- | ------------------------- |
+| POST   | `/universityModel/`    | Create a new university   |
+| GET    | `/universityModel/`    | Get all universities      |
+| GET    | `/universityModel/:id` | Get a university by ID    |
+| PATCH  | `/universityModel/:id` | Update a university by ID |
+| DELETE | `/universityModel/:id` | Delete a university by ID |
 
-- **POST `/universityRoute`**
-  _Create University_
+> Base URL: `http://localhost:3000/universityModel`
 
-- **PATCH `/universityRoute/:id`**
-  _Update University by id_
+## 7. Sample Request (Create University)
 
-- **DELETE `/universityRoute/:id`**
-  _Delete University by id_
+```json
+POST /universityModel/
 
-## 6. API Documentation
+{
+  "universityName": "Obafemi Awolowo University",
+  "location": "Ile-Ife",
+  "type": "Federal",
+  "website": "https://oauife.edu.ng",
+  "email": "info@oauife.edu.ng",
+  "programmes": ["Law", "Computer Science"],
+  "requirements": [
+    "Minimum JAMB score of 200",
+    "5 credits including Math and English"
+  ]
+}
+```
 
-You can find the Postman collection for this API [here](https://documenter.getpostman.com/view/37611500/2sB2x6mXd8)
+## 8. Rate Limiting
 
-### How to Use the Postman Collection:
+To prevent abuse, the API limits requests to:
 
-1. Click on the link to open the Postman collection.
-2. Import the collection into your Postman app.
-3. Set up any required environment variables or authentication tokens.
-4. Run the requests to interact with the API.
+* **100 request every 2 hours**
+* Returns `429 Too Many Requests` if exceeded
 
-This collection includes all the available endpoints for the API and their respective methods, parameters, and expected responses.
-
-## 7. Deployed App
+## 9. Deployed App
 
 Not yet deployed.

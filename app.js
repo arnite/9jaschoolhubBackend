@@ -11,6 +11,8 @@ import DBconnect from './config/DBconnect.js';
 // import morgan from 'morgan';
 import globalErrorhandler from './controllers/errorController.js';
 import universityRouter from './routes/universityRoute.js';
+import searchProgrammeRouter from './routes/searchProgramme.js';
+import searchUniversityRouter from './routes/searchUniversity.js';
 
 dotenv.config();
 
@@ -55,6 +57,8 @@ app.use(json({ limit: '10kb' }));
 
 // Routers
 app.use('/universityRoute', universityRouter);
+app.use('/searchProgramme', searchProgrammeRouter);
+app.use('/searchUniversity', searchUniversityRouter);
 
 // Invalid Routes
 

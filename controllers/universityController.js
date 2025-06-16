@@ -34,7 +34,10 @@ export const createUniversity = catchAsync(async (req, res, next) => {
 
 // Get all universities
 export const getAllUniversities = catchAsync(async (req, res, next) => {
-  const feautures = new APIFeatures(universityModel.find(), req.query).filter().sort().paginate()
+  const feautures = new APIFeatures(universityModel.find(), req.query)
+    .filter()
+    .sort()
+    .paginate();
 
   const doc = await feautures.query;
 

@@ -55,6 +55,27 @@ app.use(json({ limit: '10kb' }));
 //    app.use(morgan('combined'));
 //  }
 
+//Test route
+app.get('/', (req, res) => {
+  res.setHeader('Content-Type', 'text/html');
+  res.send(`
+    <html>
+      <head>
+        <meta http-equiv="refresh" content="3;url=https://documenter.getpostman.com/view/37611500/2sB2x6mXd8">
+      </head>
+      <body style="margin-top: 20px; text-align: center; font-family: Arial, sans-serif;">
+        <h1 style="color: blue; font-size: 2em;"><strong>API is Running Successfully</strong></h1>
+        <p style="font-size: 1.2em;">Redirecting to API documentation in 3 seconds...</p>
+        <p>If not redirected, click 
+          <a href="https://documenter.getpostman.com/view/37611500/2sB2x6mXd8" style="color: green; font-weight: bold;">
+            here
+          </a>.
+        </p>
+      </body>
+    </html>
+  `);
+});
+
 // Routers
 app.use('/universityRoute', universityRouter);
 app.use('/searchProgramme', searchProgrammeRouter);

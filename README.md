@@ -91,4 +91,5 @@ This collection includes all the available endpoints for the API and their respe
 
 ## 7. Deployed App
 
-Not yet deployed.
+You can view the live version of the app here:
+[9jaschoolhub - LIVE API](https://ninejaschoolhubbackend.onrender.com)

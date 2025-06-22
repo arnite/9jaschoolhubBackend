@@ -4,12 +4,9 @@ import mongoose from "mongoose"
 
 const universitySchema = new mongoose.Schema(
   {
-    image: {
-            type: String,
-            required: false,
-           }, 
+    image: String,
 
-    universityName: {
+    university_name: {
                     type: String,
                     required: true,
                     unique: true,
@@ -30,8 +27,8 @@ const universitySchema = new mongoose.Schema(
             type: String,
             required: false,
            },
-    phone: {
-            type: Number,
+    phone_number: {
+            type: String,
             required: false,
            },
     address: {
@@ -39,7 +36,7 @@ const universitySchema = new mongoose.Schema(
               required: false,
       
              },
-    programmes: [
+    notable_programs: [
                    
                    {
                     type: String,
@@ -48,7 +45,7 @@ const universitySchema = new mongoose.Schema(
                  
                ],
                 
-    requirements: [
+   admission_requirements: [
                     {
                     type: String,
                     required: false

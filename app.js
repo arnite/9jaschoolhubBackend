@@ -4,15 +4,14 @@ import helmet from 'helmet';
 import cors from 'cors';
 import dotenv from 'dotenv';
 import rateLimit from 'express-rate-limit';
-// import xss from 'xss-clean';
-// import hpp from 'hpp';
 import DBconnect from './config/DBconnect.js';
-// import compression from 'compression';
-// import morgan from 'morgan';
 import globalErrorhandler from './controllers/errorController.js';
 import universityRouter from './routes/universityRoute.js';
 import searchProgrammeRouter from './routes/searchProgramme.js';
 import searchUniversityRouter from './routes/searchUniversity.js';
+import cloudinary from './models/lib/cloudinary.js';
+import { upload } from './models/lib/multer.js';
+import streamifier from 'streamifier';
 
 dotenv.config();
 

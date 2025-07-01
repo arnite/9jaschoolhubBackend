@@ -11,13 +11,17 @@ const universitySchema = new mongoose.Schema(
                     required: true,
                     unique: true,
                     },
+    school_fees: {
+              type: String,
+              required: false,
+              },                
     location: {
               type: String,
-              required: true,
+              required: false,
               },
     type: {
           type: String,
-          required: true,
+          required: false,
           },
     website: {
               type: String,

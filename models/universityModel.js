@@ -5,10 +5,6 @@ const universitySchema = new mongoose.Schema({
     type: String,
     required: false,
   },
-  schoolFees: {
-    type: Number,
-    required: true,
-  },
   universityName: {
     type: String,
     required: true,

@@ -1,6 +1,4 @@
-
-
- [
+[
   {
     "image": "./public/ibadan.jpg",
     "university_name": "University of Ibadan",
@@ -93,8 +91,9 @@
       "Botany",
       "Microbiology"
     ],
-    "admission_requirements": "Minimum JAMB score of 200, but actual cut‑off marks differ by Faculty and Programme\nFive (5) credits at one sitting or six (6) credits at two sittings in relevant subjects including Mathematics and English language.\nCandidates must select UTME subject combinations specific to their chosen programme.\nFor Direct Entry Admission:\nTwo (2) A‑level passes in subject(s) aligned to the intended programme or A relevant OND/HND/NCE(with at least Lower Credit) in related fields\nThe same O’level credits required of UTME candidates (five/six credits including English, Mathematics as applicable)",
-    "notes": ""
+    "admission_requirements": "Minimum JAMB score of 200, but actual cut\u2011off marks differ by Faculty and Programme\nFive (5) credits at one sitting or six (6) credits at two sittings in relevant subjects including Mathematics and English language.\nCandidates must select UTME subject combinations specific to their chosen programme.\nFor Direct Entry Admission:\nTwo (2) A\u2011level passes in subject(s) aligned to the intended programme or A relevant OND/HND/NCE(with at least Lower Credit) in related fields\nThe same O\u2019level credits required of UTME candidates (five/six credits including English, Mathematics as applicable)",
+    "notes": "",
+    "school_fees_range": ""
   },
   {
     "image": "./public/lagos.jpg",
@@ -203,7 +202,8 @@
       "* Sociology"
     ],
     "admission_requirements": "",
-    "notes": ""
+    "notes": "",
+    "school_fees_range": ""
   },
   {
     "image": "./public/covenant.jpg",
@@ -248,7 +248,8 @@
       "Petroleum Engineering"
     ],
     "admission_requirements": "",
-    "notes": ""
+    "notes": "",
+    "school_fees_range": ""
   },
   {
     "image": "./public/obafemi.jpg",
@@ -359,7 +360,8 @@
       "Guidance & Counselling"
     ],
     "admission_requirements": "",
-    "notes": ""
+    "notes": "",
+    "school_fees_range": ""
   },
   {
     "image": "./public/ahmadu.jpg",
@@ -470,8 +472,9 @@
       "Agricultural Extention",
       "Adult Education and Community Development"
     ],
-    "admission_requirements": "NaN",
-    "notes": "NaN"
+    "admission_requirements": " ",
+    "notes": " ",
+    "school_fees_range": ""
   },
   {
     "image": "./public/nsukka.jpg",
@@ -595,7 +598,8 @@
       "Modern Languages B.A. (Single and Combined Hons)"
     ],
     "admission_requirements": "NaN",
-    "notes": "NaN"
+    "notes": "NaN",
+    "school_fees_range": ""
   },
   {
     "image": "./public/ilorin.jpeg",
@@ -711,7 +715,8 @@
       "Doctor of Pharmacy"
     ],
     "admission_requirements": "NaN",
-    "notes": "NaN"
+    "notes": "NaN",
+    "school_fees_range": ""
   },
   {
     "image": "./public/futminna.jpg",
@@ -726,7 +731,8 @@
       "asd"
     ],
     "admission_requirements": "NaN",
-    "notes": "NaN"
+    "notes": "NaN",
+    "school_fees_range": ""
   },
   {
     "image": "./public/uniben.jpg",
@@ -873,7 +879,8 @@
       "Industrial Engineering"
     ],
     "admission_requirements": "NaN",
-    "notes": "NaN"
+    "notes": "NaN",
+    "school_fees_range": ""
   },
   {
     "image": "./public/futakure.jpg",
@@ -934,7 +941,8 @@
       "Cyber Security"
     ],
     "admission_requirements": "NaN",
-    "notes": "NaN"
+    "notes": "NaN",
+    "school_fees_range": ""
   },
   {
     "image": "./public/bayero.jpg",
@@ -1049,7 +1057,8 @@
       "Cyber Security"
     ],
     "admission_requirements": "NaN",
-    "notes": "NaN"
+    "notes": "NaN",
+    "school_fees_range": ""
   },
   {
     "image": "./public/uniport.jpg",
@@ -1161,7 +1170,8 @@
       "Natural Gas Engineering"
     ],
     "admission_requirements": "NaN",
-    "notes": "NaN"
+    "notes": "NaN",
+    "school_fees_range": ""
   },
   {
     "image": "./public/nnamdi.jpg",
@@ -1275,7 +1285,8 @@
       "Science Education (Physics)"
     ],
     "admission_requirements": "NaN",
-    "notes": "NaN"
+    "notes": "NaN",
+    "school_fees_range": ""
   },
   {
     "image": "./public/lautech.jpg",
@@ -1287,8 +1298,9 @@
     "phone_number": " +234 8067624952",
     "address": "Ladoke Akintola University of Technology. Along Oyo, Ilorin Road, 210214, Ogbomosho, Oyo state",
     "notable_programs": [],
-    "admission_requirements": "*Minimum JAMB score of 160, but actual cut‑off marks differ by Faculty and Programme\n*Five (5) credits at not more than two sittings in relevant subjects including Mathematics and English language.\n* Candidates must select UTME subject combinations specific to their chosen programme.\nFor Direct Entry Admission:\n* Two (2) A‑level passes in subject(s) aligned to the intended programme or A relevant OND/HND(with at least Lower Credit) in related fields\n* The same O’level credits required of UTME candidates (five including English, Mathematics as applicable)",
-    "notes": "NaN"
+    "admission_requirements": "*Minimum JAMB score of 160, but actual cut\u2011off marks differ by Faculty and Programme\n*Five (5) credits at not more than two sittings in relevant subjects including Mathematics and English language.\n* Candidates must select UTME subject combinations specific to their chosen programme.\nFor Direct Entry Admission:\n* Two (2) A\u2011level passes in subject(s) aligned to the intended programme or A relevant OND/HND(with at least Lower Credit) in related fields\n* The same O\u2019level credits required of UTME candidates (five including English, Mathematics as applicable)",
+    "notes": "NaN",
+    "school_fees_range": ""
   },
   {
     "image": "./public/futo.jpg",
@@ -1300,8 +1312,9 @@
     "phone_number": "NaN",
     "address": "1526, PMB, Owerri, Ihiagwa",
     "notable_programs": [],
-    "admission_requirements": "Candidates must have at least five (5) credits in the Senior Secondary Certificate Examinations (SSCE) or the General Certificate of Education (GCE) Ordinary Level. These credits must be earned in no more than two sittings. Applicants must select the appropriate JAMB subject combination based on their chosen course. A minimum JAMB score of 150 is required for admission into FUTO. FUTO must be the candidate’s first choice institution in the JAMB application. Candidates must be at least 16 years old by the time of admission.\n\nDirect Entry Admission Requirements\nLike UTME candidates, Direct Entry applicants must have at least five (5) credits in the SSCE/GCE Ordinary Level, with a maximum of two sittings.\nCandidates with JUPEB or other advanced-level qualifications in subjects related to their chosen course may be considered for Direct Entry.\nA Merit Pass in the National Certificate of Education (NCE), National Diploma (ND), or other relevant qualifications may also be considered for admission.",
-    "notes": "NaN"
+    "admission_requirements": "Candidates must have at least five (5) credits in the Senior Secondary Certificate Examinations (SSCE) or the General Certificate of Education (GCE) Ordinary Level. These credits must be earned in no more than two sittings. Applicants must select the appropriate JAMB subject combination based on their chosen course. A minimum JAMB score of 150 is required for admission into FUTO. FUTO must be the candidate\u2019s first choice institution in the JAMB application. Candidates must be at least 16 years old by the time of admission.\n\nDirect Entry Admission Requirements\nLike UTME candidates, Direct Entry applicants must have at least five (5) credits in the SSCE/GCE Ordinary Level, with a maximum of two sittings.\nCandidates with JUPEB or other advanced-level qualifications in subjects related to their chosen course may be considered for Direct Entry.\nA Merit Pass in the National Certificate of Education (NCE), National Diploma (ND), or other relevant qualifications may also be considered for admission.",
+    "notes": "NaN",
+    "school_fees_range": ""
   },
   {
     "image": "./public/funaab.jpg",
@@ -1316,7 +1329,8 @@
       "Agricultural Extension and Rural Development"
     ],
     "admission_requirements": "Applicants must possess a minimum of five (5) O'Level Credit passes in relevant subjects at one or two sittings in WASSCE, SSCE, NECO, NABTEB. The required subjects include English Language, Mathematics, Chemistry, Biology/Agricultural Science, and at least a pass in Physics. Candidates must have chosen FUNAAB as their preferred institution during the JAMB registration. Applicants must have sat for the UTME and scored a minimum of 160 marks. All applicants must participate in the FUNAAB Post-UTME screening exercise. ",
-    "notes": "NaN"
+    "notes": "NaN",
+    "school_fees_range": ""
   },
   {
     "image": "./public/lasu.jpg",
@@ -1329,7 +1343,8 @@
     "address": "NaN",
     "notable_programs": [],
     "admission_requirements": "NaN",
-    "notes": "NaN"
+    "notes": "NaN",
+    "school_fees_range": ""
   },
   {
     "image": "./public/jos.jpg",
@@ -1344,7 +1359,8 @@
       "Animal Nutrition and Biotechnology"
     ],
     "admission_requirements": "O'Level, A'Level (for Direct Entry) results",
-    "notes": "NaN"
+    "notes": "NaN",
+    "school_fees_range": ""
   },
   {
     "image": "./public/uyo.jpg",
@@ -1356,8 +1372,9 @@
     "phone_number": 2348146129875,
     "address": "Nwaniba Road, Uyo, Akwa Ibom State, Nigeria.",
     "notable_programs": [],
-    "admission_requirements": "i) West African School Certificate, General Certificate of Education or Senior Secondary School Certificate with at least credit passes in five subjects in not more than two sittings                                                                                                              (ii) Satisfactory performance in JAMB.\n(iii) Satisfactory performance in the Post-UTME Screening Exercise conducted by the University. \n\nFor Direct Entry\nCandidates in addition to ordinary level requirements, should have the following:\n(i) General Certificate of Education at Advanced Level in at least two relevant subjects.\n(ii) Ordinary National Diploma (OND) at Upper/Lower Credit level from recognized institutions.\n(iii) Higher National Diploma (HND) at Upper/Lower Credit level from recognized institutions.\n(iv) Nigeria Certificate in Education (NCE) with a minimum of merit in the relevant subject(s) from recognized institutions.\n(v) Bachelor’s degree from recognized institutions.\nIn addition to the above-stated general requirements, Departmental admission requirements stipulated by the University and reflected in the Brochure of the Joint Admissions and Matriculation Board (JAMB) must be met by candidates.",
-    "notes": "NaN"
+    "admission_requirements": "i) West African School Certificate, General Certificate of Education or Senior Secondary School Certificate with at least credit passes in five subjects in not more than two sittings                                                                                                              (ii) Satisfactory performance in JAMB.\n(iii) Satisfactory performance in the Post-UTME Screening Exercise conducted by the University. \n\nFor Direct Entry\nCandidates in addition to ordinary level requirements, should have the following:\n(i) General Certificate of Education at Advanced Level in at least two relevant subjects.\n(ii) Ordinary National Diploma (OND) at Upper/Lower Credit level from recognized institutions.\n(iii) Higher National Diploma (HND) at Upper/Lower Credit level from recognized institutions.\n(iv) Nigeria Certificate in Education (NCE) with a minimum of merit in the relevant subject(s) from recognized institutions.\n(v) Bachelor\u2019s degree from recognized institutions.\nIn addition to the above-stated general requirements, Departmental admission requirements stipulated by the University and reflected in the Brochure of the Joint Admissions and Matriculation Board (JAMB) must be met by candidates.",
+    "notes": "NaN",
+    "school_fees_range": ""
   },
   {
     "image": "./public/udusok.jpg",
@@ -1372,7 +1389,8 @@
       "Animal Production and Health"
     ],
     "admission_requirements": "five 'O' level credits in not more than two sittings, including English and Mathematics",
-    "notes": "NaN"
+    "notes": "NaN",
+    "school_fees_range": ""
   },
   {
     "image": "./public/atbu.jpeg",
@@ -1385,7 +1403,8 @@
     "address": "P.M.B. 0248, Bauchi, Nigeria.",
     "notable_programs": [],
     "admission_requirements": "Five credit passes in the (SSCE) or the School Certificate/General Certificate of Education Ordinary Level (SC/GCE 'O' Level) or equivalent relevant to the course of study and must be obtained at not more than two (2) sittings.",
-    "notes": "NaN"
+    "notes": "NaN",
+    "school_fees_range": ""
   },
   {
     "image": "./public/eksu.jpg",
@@ -1400,7 +1419,8 @@
       "Crop and Environmental Protection"
     ],
     "admission_requirements": "NaN",
-    "notes": "NaN"
+    "notes": "NaN",
+    "school_fees_range": ""
   },
   {
     "image": "./public/delsu.jpg",
@@ -1413,7 +1433,8 @@
     "address": "P.M.B. 1, Abraka\nDelta State, Nigeria",
     "notable_programs": [],
     "admission_requirements": "O'Level Requirements:\nA minimum of five (5) credit passes in the SSCE, WAEC, NABTEB, or G.C.E Ordinary Level. These credits must include English Language and Mathematics. The passes should be obtained in not more than two sittings for most programs. However, for programs like Pharmacy and Nursing Science, they may need to be obtained in one sitting. \n\nJAMB Requirements:\nA minimum JAMB score of 180 is required for admission. Candidates may be required to participate in a screening test. Some programs may require DELSU to be the first choice on the JAMB form. Students with HND or OND certificates may be considered for direct entry into higher levels of the degree programs. Students can also apply to the Joint Universities Preliminary Education Board (JUPEB) Foundation program, which allows them to join the university's degree program at the 200 level. ",
-    "notes": "NaN"
+    "notes": "NaN",
+    "school_fees_range": ""
   },
   {
     "image": "./public/aau.jpg",
@@ -1428,7 +1449,8 @@
       "Crop Production & Soil Science"
     ],
     "admission_requirements": "A minimum of five credit passes in SSCE/WASC/NECO/GCE (O/L) or equivalent, including English Language and Mathematics, obtained in not more than two sittings. At least three credits in relevant subjects for the chosen program. \nSome programs may require additional subjects like Physics, Chemistry, Biology, or Economics. Candidates may need to write an entrance examination before admission. \n\nFor DE: \nAt least two A/Level passes in relevant subjects.\nA merit-level Diploma in a related field. \nA National Certificate of Education (NCE) with merit in a relevant field. ",
-    "notes": "NaN"
+    "notes": "NaN",
+    "school_fees_range": ""
   },
   {
     "image": "./public/calabar.jpg",
@@ -1441,7 +1463,8 @@
     "address": "University Of Calabar, Cross River State, Etagbor, PMB 1115 Nigeria.\n\n",
     "notable_programs": [],
     "admission_requirements": "Candidates must sit for the JAMB UTME and achieve an acceptable score. \nSpecific cutoff marks may vary depending on the program and the year. \nCandidates must possess a minimum of five (5) credit passes in the West African Senior School Certificate Examination (WASSCE) or equivalent.\nThese credits must include English Language and Mathematics in not more than two sittings. candidates may be required to attend a post-UTME screening exercise. These qualifications may include Diploma in Education, Merit in Ordinary National Diploma (OND), or other recognized equivalent qualifications.\nDirect entry candidates must also meet the O'Level requirements.\nSome programs have additional specific subject combinations or requirements beyond the basic O'Level requirements.\n",
-    "notes": "NaN"
+    "notes": "NaN",
+    "school_fees_range": ""
   },
   {
     "image": "./public/fuoye.jpg",
@@ -1456,7 +1479,8 @@
       "Agricultural Economics"
     ],
     "admission_requirements": "Candidates must sit for the JAMB UTME and achieve an acceptable score. \nSpecific cutoff marks may vary depending on the program and the year. \nCandidates must possess a minimum of five (5) credit passes in the West African Senior School Certificate Examination (WASSCE) or equivalent.\nThese credits must include English Language and Mathematics in not more than two sittings. candidates may be required to attend a post-UTME screening exercise. These qualifications may include Diploma in Education, Merit in Ordinary National Diploma (OND), or other recognized equivalent qualifications.\nDirect entry candidates must also meet the O'Level requirements.\nSome programs have additional specific subject combinations or requirements beyond the basic O'Level requirements.",
-    "notes": "Ranges between 150000- 250000"
+    "notes": "Ranges between 150000- 250000",
+    "school_fees_range": ""
   },
   {
     "image": "./public/uniosun.jpg",
@@ -1470,8 +1494,9 @@
     "notable_programs": [
       "Civil Engineering"
     ],
-    "admission_requirements": "Candidates are to possess School Certificate/GCE with passes at Credit Level or above in five subjects including English Language and Mathematics obtained in not more than two (2) sittings or ii) Teachers’ Grade II Certificate with passes at Credit or Merit Level in five subjects, including English Language and Mathematics.  \nDirect Entry Candidate\n\nCandidates to be eligible for Direct Entry Admission must possess NCE or equivalent in two relevant subjects at Credit or Merit level. In addition, must possess i) School Certificate/GCE, O’Level passes in at least five other subjects at credit level including English Language and Mathematics at not more than two sittings or ii) Teachers’ Grade II with Credit or Merit in five relevant subjects including English Language and Mathematics. ",
-    "notes": "NaN"
+    "admission_requirements": "Candidates are to possess School Certificate/GCE with passes at Credit Level or above in five subjects including English Language and Mathematics obtained in not more than two (2) sittings or ii) Teachers\u2019 Grade II Certificate with passes at Credit or Merit Level in five subjects, including English Language and Mathematics.  \nDirect Entry Candidate\n\nCandidates to be eligible for Direct Entry Admission must possess NCE or equivalent in two relevant subjects at Credit or Merit level. In addition, must possess i) School Certificate/GCE, O\u2019Level passes in at least five other subjects at credit level including English Language and Mathematics at not more than two sittings or ii) Teachers\u2019 Grade II with Credit or Merit in five relevant subjects including English Language and Mathematics. ",
+    "notes": "NaN",
+    "school_fees_range": ""
   },
   {
     "image": "./public/benue.jpg",
@@ -1483,8 +1508,9 @@
     "phone_number": "234 - 803 626 9392",
     "address": "Km 1, Gboko Road, Makurdi, Benue State, Nigeria.",
     "notable_programs": [],
-    "admission_requirements": "A minimum of five (5) credits at O‟Level in any of Teachers grade II (TC II) or Federal Craft Training Certificate or NTC/NBC, C&G and WAEC (Tech) at not more than two sittings in\nrelevant subjects, which must include English Language, Mathematics, Physics and Chemistry for UTME (100 level) candidates, (the minimum point or UTME candidates is as pegged by the Benue State University Admissions Committee and JAMB from time to time).\n\nDirect Entry Applicants\nCandidates applying for Direct Entry (DE) into two (200) level should possess in addition to the (5) O‟ Level credits, at least an Upper Credit in ND from any recognized institution, or merit in IJMB, or NCE, or „A‟ Level in the relevant subjects.\n",
-    "notes": "NaN"
+    "admission_requirements": "A minimum of five (5) credits at O\u201fLevel in any of Teachers grade II (TC II) or Federal Craft Training Certificate or NTC/NBC, C&G and WAEC (Tech) at not more than two sittings in\nrelevant subjects, which must include English Language, Mathematics, Physics and Chemistry for UTME (100 level) candidates, (the minimum point or UTME candidates is as pegged by the Benue State University Admissions Committee and JAMB from time to time).\n\nDirect Entry Applicants\nCandidates applying for Direct Entry (DE) into two (200) level should possess in addition to the (5) O\u201f Level credits, at least an Upper Credit in ND from any recognized institution, or merit in IJMB, or NCE, or \u201eA\u201f Level in the relevant subjects.\n",
+    "notes": "NaN",
+    "school_fees_range": ""
   },
   {
     "image": "./public/adekunle.jpg",
@@ -1499,7 +1525,8 @@
       "Computer Engineering"
     ],
     "admission_requirements": "Applicants must be at least 16 years old by the time of admission.\nApplicants are required to achieve a minimum score of 160 in the UTME. However, higher scores may be needed depending on the department and course of study.\nApplicants must obtain at least five (5) credits in relevant subjects, including English Language and Mathematics, in no more than two sittings.\nAAUA must be selected as the first choice of institution in the UTME registration.\nAfter the UTME, applicants must participate in the AAUA Post-UTME screening exercise.\n\nDirect Entry Admission Requirements\nCandidates must possess a minimum of two (2) A-Level passes in relevant subjects.\nAlternatively, those with an OND, HND, NCE, or equivalent qualifications in related fields may also be considered.\nLike UTME applicants, Direct Entry candidates must obtain at least five (5) credits in relevant subjects, including English Language and Mathematics, in no more than two sittings.\nApplicants must provide academic transcripts for ND, HND, or NCE qualifications, which must be sent directly to the university.\nCandidates must complete the JAMB Direct Entry form.",
-    "notes": "NaN"
+    "notes": "NaN",
+    "school_fees_range": ""
   },
   {
     "image": "./public/abia.jpg",
@@ -1511,8 +1538,9 @@
     "phone_number": 2349018003421,
     "address": "Abia State University, P.M.B. 2000, Uturu, Abia State, Nigeria. \n",
     "notable_programs": [],
-    "admission_requirements": "The management of Abia State University (ABSU) has set the official cut-off mark for the 2025/2026 admission exercise at 140. This means that all candidates who wish to be considered for admission must have scored at least 140 in their UTME.\n\nCandidates who meet this requirement are eligible to apply for admission into their chosen courses at ABSU. However, achieving the Abia State University cut-off mark does not guarantee automatic admission, as other factors like O’Level results, departmental requirements, and screening performance will also be considered.",
-    "notes": "NaN"
+    "admission_requirements": "The management of Abia State University (ABSU) has set the official cut-off mark for the 2025/2026 admission exercise at 140. This means that all candidates who wish to be considered for admission must have scored at least 140 in their UTME.\n\nCandidates who meet this requirement are eligible to apply for admission into their chosen courses at ABSU. However, achieving the Abia State University cut-off mark does not guarantee automatic admission, as other factors like O\u2019Level results, departmental requirements, and screening performance will also be considered.",
+    "notes": "NaN",
+    "school_fees_range": ""
   },
   {
     "image": "./public/aksu.jpg",
@@ -1527,7 +1555,8 @@
       "Electronic and Electrical Engineering"
     ],
     "admission_requirements": "Admission requirements through Unified Tertiary Matriculation Examination (UTME)\n\n\n1. Minimum of Credit passes in Five (5) subjects including English Language at SSCE, GCE O'Level and any other equivalent examinations.\n2. UTME scores of at least 140 and above (subject to change).\n3. Post-UTME screening score of not less than 180 (subject to change).\n4. In addition to the above, candidates must make Akwa Ibom State University 1st choice to qualify to write the Post-UTME Screening Test.\n5. Candidates who score less than 140 at the Post-UTME screening test are not eligible for admission into any programme in AKSU irrespective of any higher scores obtained at UTME.\n6. For final selection into programmes, the candidate's average scores from the UTME and Post-UTME screening Tests are used.\nThe cut-off point for admission varies from one programmed to another.\n\nDirect Entry\n\n\n1. Minimum of credit passes in five subjects including English Language at SSCE, GCE O'Level or equivalent qualification.\n\n2. Either A' levels, OND or NCE in relevant subject areas.\n\n3. An acceptable score in the Direct Entry Screening Exercise.\n\n4. Final selection is based on a combination of the candidate's certificates and score in the direct entry screening test.\n\n\n\n",
-    "notes": "NaN"
+    "notes": "NaN",
+    "school_fees_range": ""
   },
   {
     "image": "./public/babcock.jpg",
@@ -1540,7 +1569,8 @@
     "address": "PMB 4003, ILISHAN REMO, OGUN STATE, NIGERIA .",
     "notable_programs": [],
     "admission_requirements": " 5 credits at the GCE/SSCE/NECO Examinations or their equivalent (in not more than 2 sittings), one sitting only for Medicine, and UTME Aggregate Score NOT lower than 170. Only candidates from 16years of age and above are eligible to apply.",
-    "notes": "NaN"
+    "notes": "NaN",
+    "school_fees_range": "625,413 - N1,286,283.70"
   },
   {
     "image": "./public/abuad.jpg",
@@ -1554,8 +1584,9 @@
     "notable_programs": [
       "Food Engineering"
     ],
-    "admission_requirements": "LL.B: a UTME applicant must have at least 5 credit passes at one sitting in his or her O’ Level examination which must include credit passes in English Language, Literature in English and Mathematics. The applicant must have also sat for and passed the UTME examination for the current year.\n\nA Direct Entry applicant must have a good credit pass in his or her A’ Level examination from a reputable institution in addition to the O’ Level subjects enumerated above.\n\nB.Sc Criminology and B.Sc Police Science: a UTME applicant must have at least 5 credit passes at one sitting or 6 credit passes at two sittings in his or her O’ Level examination which must include credit passes in English Language and Mathematics. The applicant must have also sat for and passed the UTME examination for the current year.\n\nA Direct Entry applicant must have a good credit pass in his or her A’ Level examination from a reputable institution in addition to the O’ Level subjects enumerated above.\n\nDiploma and Certificate programmes: an applicant must have at least 4 credit passes at one sitting or 5 credit passes at two sittings in his or her O’ Level examination which must include credit passes in English Language and Mathematics.",
-    "notes": "NaN"
+    "admission_requirements": "LL.B: a UTME applicant must have at least 5 credit passes at one sitting in his or her O\u2019 Level examination which must include credit passes in English Language, Literature in English and Mathematics. The applicant must have also sat for and passed the UTME examination for the current year.\n\nA Direct Entry applicant must have a good credit pass in his or her A\u2019 Level examination from a reputable institution in addition to the O\u2019 Level subjects enumerated above.\n\nB.Sc Criminology and B.Sc Police Science: a UTME applicant must have at least 5 credit passes at one sitting or 6 credit passes at two sittings in his or her O\u2019 Level examination which must include credit passes in English Language and Mathematics. The applicant must have also sat for and passed the UTME examination for the current year.\n\nA Direct Entry applicant must have a good credit pass in his or her A\u2019 Level examination from a reputable institution in addition to the O\u2019 Level subjects enumerated above.\n\nDiploma and Certificate programmes: an applicant must have at least 4 credit passes at one sitting or 5 credit passes at two sittings in his or her O\u2019 Level examination which must include credit passes in English Language and Mathematics.",
+    "notes": "NaN",
+    "school_fees_range": ""
   },
   {
     "image": "./public/landmark.jpg",
@@ -1567,8 +1598,9 @@
     "phone_number": "234 8151319178 \n",
     "address": "Km 4 Ipetu Road, Omu-Aran,\nPMB 1001, Ipetu Road\nOmu-Aran, Kwara State\n",
     "notable_programs": [],
-    "admission_requirements": "GENERAL REQUIREMENTS \n\nThe minimum entry requirements for admission into Landmark University are credit passes in 5 subjects at the SSCE/GCE O’ Level/NECO/NABTEB or its equivalent obtained at not more than two sittings. The subjects passed must include English Language, Mathematics and other subjects relevant to the proposed course of study.\n\nCandidates are also to note that, there are other requirements that may be specific to a College and/or a Programme.\n\nUTME PREREQUISITES\n\nCandidates applying to Landmark University should note the following:\n\ni) Candidates must have sat for the current year Unified Tertiary Matriculation Examination (UTME) of the Joint Admissions and Matriculation Board (JAMB) and attained the prescribed cut-off marks as a statutory requirement for entry into Nigerian Universities.\n\nii) Applicants are strongly advised to ensure that their UTME subject combination qualifies them for their chosen programme in Landmark University. \n\niii) Candidates who did not choose Landmark University in the current year UTME are free to apply for admission into the University\n\niv) In addition to the above, Landmark University conducts a Post UTME Screening Exercise for all candidates seeking admission into the University.  Applicants may however, not be admitted without fulfilling the demands of the screening exercise.",
-    "notes": "NaN"
+    "admission_requirements": "GENERAL REQUIREMENTS \n\nThe minimum entry requirements for admission into Landmark University are credit passes in 5 subjects at the SSCE/GCE O\u2019 Level/NECO/NABTEB or its equivalent obtained at not more than two sittings. The subjects passed must include English Language, Mathematics and other subjects relevant to the proposed course of study.\n\nCandidates are also to note that, there are other requirements that may be specific to a College and/or a Programme.\n\nUTME PREREQUISITES\n\nCandidates applying to Landmark University should note the following:\n\ni) Candidates must have sat for the current year Unified Tertiary Matriculation Examination (UTME) of the Joint Admissions and Matriculation Board (JAMB) and attained the prescribed cut-off marks as a statutory requirement for entry into Nigerian Universities.\n\nii) Applicants are strongly advised to ensure that their UTME subject combination qualifies them for their chosen programme in Landmark University. \n\niii) Candidates who did not choose Landmark University in the current year UTME are free to apply for admission into the University\n\niv) In addition to the above, Landmark University conducts a Post UTME Screening Exercise for all candidates seeking admission into the University.  Applicants may however, not be admitted without fulfilling the demands of the screening exercise.",
+    "notes": "NaN",
+    "school_fees_range": "N596500 - N950,000 "
   },
   {
     "image": "./public/bowen.jpeg",
@@ -1583,11 +1615,12 @@
       "Mechanical EngineeringWikipedia+4Legit.ng - Nigeria news.+4Ladoke Akintola University of Technology+4AllSchool+1Nigerian Waves+1Wikipedia+2Ladoke Akintola University of Technology+2Legit.ng - Nigeria news.+2"
     ],
     "admission_requirements": "Five credits in relevant subjects, including Mathematics and English Language, in your Senior Secondary School Certificate Examination (SSCE) or its equivalent. Minimum cut-off mark in the Unified Tertiary Matriculation Examination (UTME). Meeting other program-specific criteria",
-    "notes": "NaN"
+    "notes": "NaN",
+    "school_fees_range": "585,900 - 4.3 million"
   },
   {
     "image": "./public/redeemers.jpg",
-    "university_name": "Redeemer’s University",
+    "university_name": "Redeemer\u2019s University",
     "location": "Ede",
     "type": "Private",
     "website": "run.edu.ng",
@@ -1598,7 +1631,8 @@
       "3. Faculty of Environmental Sciences"
     ],
     "admission_requirements": "To gain admission to Redeemer's University, candidates need to meet specific requirements, including a minimum of five 'O' Level credits with English and Mathematics, as well as meeting the minimum UTME score set by JAMB at least 180 for most programs and 200 for some specific programs like those in Science and Technology.",
-    "notes": "NaN"
+    "notes": "NaN",
+    "school_fees_range": "587,000 - 1.2 million"
   },
   {
     "image": "./public/nile.jpg",
@@ -1611,7 +1645,8 @@
     "address": "Plot 681, Cadastral Zone C-OO, Research & Institution Area, Jabi Airport Bypass, Abuja FCT, 900001 Nigeria",
     "notable_programs": [],
     "admission_requirements": "To gain admission to Nile University through JAMB, Nigerian students need to take the UTME and achieve the university's approved cut-off mark for that year. Additionally, they must present 5 credit passes in at least two sittings. Specific subject combinations and requirements can vary depending on the program",
-    "notes": "NaN"
+    "notes": "NaN",
+    "school_fees_range": "2.8 million - 6.5 million"
   },
   {
     "image": "./public/american.jpg",
@@ -1626,7 +1661,8 @@
       "Architecture"
     ],
     "admission_requirements": "To be considered for admission to the American University of Nigeria (AUN), Nigerian students generally need a minimum JAMB score of 160, or the annual official JAMB cut-off score. They also need to meet other requirements, such as providing a valid email address, phone number, and National Identification Number (NIN), and potentially submitting O'Level results",
-    "notes":" NaN"
+    "notes": " NaN",
+    "school_fees_range": ""
   },
   {
     "image": "./public/benson.jpg",
@@ -1639,7 +1675,8 @@
     "address": "Address; University Way.\nOff Upper Adesuwa Road\nGovernment Reservation Area (GRA).\nBenin City\nNigeria",
     "notable_programs": [],
     "admission_requirements": "To gain admission to Benson Idahosa University, applicants generally need to have passed the Unified Tertiary Matriculation Examination (UTME). Additionally, candidates must possess five (5) credit level passes in GCE \"O\" level or SSCE, including English Language, Mathematics, and other relevant subjects as required by their chosen program",
-    "notes":" NaN"
+    "notes": " NaN",
+    "school_fees_range": ""
   },
   {
     "image": "./public/igbinedion.jpg",
@@ -1654,7 +1691,8 @@
       "Building"
     ],
     "admission_requirements": "To be admitted to Igbinedion University, candidates must first sit for the Unified Tertiary Matriculation Examination (UTME) and achieve the prescribed cut-off marks. Additionally, they need to provide evidence of applying to JAMB, their official academic transcript, and a JAMB transfer form if applicable. While not explicitly stated, candidates should also be aware of the general entry requirements, which include passes in at least two subjects at the Advanced level and an additional subject at the subsidiary level in the General Certificate of Education Examination",
-    "notes":" NaN"
+    "notes": " NaN",
+    "school_fees_range": "1 million - 4 million"
   },
   {
     "image": "./public/ajayi.jpg",
@@ -1667,7 +1705,8 @@
     "address": " Adress: PMB 1066, Oyo, Oyo State, Nigeria",
     "notable_programs": [],
     "admission_requirements": "To gain admission to Ajayi Crowther University (ACU) through the Joint Admissions and Matriculation Board (JAMB), candidates need to choose ACU as their first choice in the UTME and score at least 180 in all relevant subjects. Additionally, candidates may be required to meet specific subject requirements based on their chosen program",
-    "notes": "NaN"
+    "notes": "NaN",
+    "school_fees_range": ""
   },
   {
     "image": "./public/Al-Hikmah.jpg",
@@ -1682,7 +1721,8 @@
       "Estate Management"
     ],
     "admission_requirements": "To be admitted to Al-Hikmah University through UTME, applicants need a minimum of five (5) credits in WASSCE/NECO/GCE/NABTEB/SISC in subjects relevant to their desired program, including English Language. Mathematics is also required for certain faculties like Management Sciences, Natural and Applied Sciences, and some Education courses. A JAMB score of at least 140 is generally required.",
-    "notes": "NaN"
+    "notes": "NaN",
+    "school_fees_range": "N176,550 - N1,362,500"
   },
   {
     "image": "./public/caleb.png",
@@ -1695,7 +1735,8 @@
     "address": "Adress: KM 15, Ikorodu-Itoikin Road, Imota, Lagos",
     "notable_programs": [],
     "admission_requirements": "To gain admission to Caleb University through JAMB (UTME), applicants must score a minimum of 160 in the UTME. Additionally, they need to possess five credit passes in relevant subjects, including English Language and Mathematics, in their SSCE (or equivalent). If a candidate did not select Caleb University as their first choice, they need to change their first choice to Caleb University at an accredited JAMB CBT Centre",
-    "notes": "NaN"
+    "notes": "NaN",
+    "school_fees_range": "N969,000 - N2,423,000 "
   },
   {
     "image": "./public/baze.jpeg",
@@ -1710,7 +1751,8 @@
       "Fine and Applied Arts"
     ],
     "admission_requirements": "To gain admission to Baze University through JAMB, candidates need to obtain a JAMB form, meet the university's cut-off point, and possess at least 5 O'Level credit passes in WAEC/NECO/NABTEB",
-    "notes": "NaN"
+    "notes": "NaN",
+    "school_fees_range": "N3,000,000 - N5,000,000 "
   },
   {
     "image": "./public/veritas.jpg",
@@ -1723,7 +1765,8 @@
     "address": "Address; Bwari Area Council, FCT-Abuja, Abuja, Nigeria\n9.28857708129,\n7.41568800158",
     "notable_programs": [],
     "admission_requirements": "For admission through the Unified Tertiary Matriculation Examination (UTME), candidates at Veritas University need a minimum of five credit passes in their O'level results, including English Language and Mathematics, obtained in no more than two sittings. In addition to these requirements, candidates must also meet specific score requirements based on their chosen program",
-    "notes": "NaN"
+    "notes": "NaN",
+    "school_fees_range": "N670,000 - N1,786,000"
   },
   {
     "image": "./public/Godfrey.jpg",
@@ -1738,7 +1781,8 @@
       "Surveying and Geoinformatics"
     ],
     "admission_requirements": "To gain admission to Godfrey Okoye University, candidates generally need a minimum of five credits in their O'Level results, including English and Mathematics, and a minimum JAMB score. The specific JAMB score requirement varies depending on the faculty and program, with some like Law requiring 200 and others 160. Candidates should also ensure they have Godfrey Okoye University as their first choice institution or consider changing their choice on the JAMB portal. \nDetailed Requirements:",
-    "notes": "NaN"
+    "notes": "NaN",
+    "school_fees_range": "N650,000 - N4,000,000"
   },
   {
     "image": "./public/madonna.jpg",
@@ -1751,7 +1795,8 @@
     "address": "Address; 1 Madonna University Road\nP.M.B 05 Elele,\nRivers State Nigeria.",
     "notable_programs": [],
     "admission_requirements": "For admission to Madonna University through JAMB, candidates must have a minimum of five O'Level credit passes including English Language and Mathematics. Additionally, they need to have scored a minimum of 140 in the JAMB UTME. Candidates are also eligible if they are awaiting their SSCE results, provided they are available by the time of resumption. Specific requirements for Law, Medicine, Pharmacy, and Nursing require a higher JAMB score of 200",
-    "notes": "NaN"
+    "notes": "NaN",
+    "school_fees_range": "N450,000 - N2,000,000"
   },
   {
     "image": "./public/jabu.jpg",
@@ -1766,7 +1811,8 @@
       "Urban and Regional PlanningAllSchool+1Legit.ng - Nigeria news.+1admissionlistnews.com.ng+11Legit.ng - Nigeria news.+11Ladoke Akintola University of Technology+11"
     ],
     "admission_requirements": "Prospective students wishing to apply for undergraduate admission into one of our colleges must possess any one of GCE, O Level, SSCE (WAEC), NECO, NABTEB or its equivalence with minimum credit passes in five subjects including English Language and Mathematics at one or two sittings. Interested candidates who have already applied to JAMB for admission and wish to change their first choice of university to Joseph Ayo Babalola University are required to:\n1. Apply for a change of institution through JAMB.\n2. Fill out our online application form or obtain a Joseph Ayo Babalola University application form.\n3. Participate in the screening exercise.\nProspective students still awaiting their results can also apply provided their results will be available by September of the intended year of study.",
-    "notes": "NaN"
+    "notes": "NaN",
+    "school_fees_range": ""
   },
   {
     "image": "./public/paul.jpg",
@@ -1781,7 +1827,8 @@
       "4. Faculty of Food and Consumer Sciences"
     ],
     "admission_requirements": "The general admission requirements for Paul University include a minimum of five O'Level credit passes, including English Language and Mathematics, obtained in no more than two sittings. Additionally, candidates should have credit passes in three relevant subjects at the Advanced level GCE or its equivalent",
-    "notes": "NaN"
+    "notes": "NaN",
+    "school_fees_range": "N 260,000 - N700,000"
   },
   {
     "image": "./public/Fountain.jfif",
@@ -1794,6 +1841,7 @@
     "address": "Opposite Olomola Hospital, Along Agric Settlement Road, Oke-Osun, Osogbo, Osun State, Nigeria",
     "notable_programs": [],
     "admission_requirements": "To gain admission to Fountain University, prospective students need to meet specific requirements including a minimum of 5 O'Level credit passes in relevant subjects, including English and Mathematics, at not more than two sittings. Additionally, they must score at least 140 in the JAMB UTME and choose Fountain University as their first choice. It's also crucial to upload O'Level results and other required documents on JAMB CAPS and pay the required fees for application processing",
-    "notes": "NaN"
+    "notes": "NaN",
+    "school_fees_range": "N390,000 - N935,000"
   }
 ]

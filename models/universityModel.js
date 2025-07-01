@@ -10,11 +10,7 @@ const universitySchema = new mongoose.Schema(
                     type: String,
                     required: true,
                     unique: true,
-                    },
-    school_fees: {
-              type: String,
-              required: false,
-              },                
+                    },                
     location: {
               type: String,
               required: false,
@@ -58,7 +54,11 @@ const universitySchema = new mongoose.Schema(
     notes: {
             type: String,
             required: false,
-           }
+           },
+     school_fees_range: {
+              type: String,
+              required: false,
+              }       
         }
             )
 

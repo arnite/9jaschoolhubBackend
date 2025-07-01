@@ -12,6 +12,7 @@ import searchUniversityRouter from './routes/searchUniversity.js';
 import cloudinary from './models/lib/cloudinary.js';
 import { upload } from './models/lib/multer.js';
 import streamifier from 'streamifier';
+import { CloudinaryStorage } from 'multer-storage-cloudinary'
 
 dotenv.config();
 
@@ -53,6 +54,29 @@ app.use(json({ limit: '10kb' }));
 //  } else if (process.env.NODE_ENV === 'production') {
 //    app.use(morgan('combined'));
 //  }
+
+// Set up Cloudinary storage for multer
+const storage = new CloudinaryStorage({
+  cloudinary: cloudinary,
+    params: {
+    folder: 'uploads', // Cloudinary folder
+    allowed_formats: ['jpg', 'png', 'jpeg'],
+  },
+});
+
+
+
+// Endpoint to upload file
+app.post('/upload', upload.single('image'), (req, res) => {
+  try {
+    res.json({
+      message: 'Upload successful',
+      fileUrl: req.file.path,
+    });
+  } catch (err) {
+    res.status(500).json({ error: 'Upload failed' });
+  }
+});
 
 //Test route
 app.get('/', (req, res) => {

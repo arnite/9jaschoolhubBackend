@@ -53,5 +53,6 @@ const universitySchema = new mongoose.Schema({
   },
 });
 
+
 export default mongoose.models.universityModel ||
   mongoose.model('universityModel', universitySchema);

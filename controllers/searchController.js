@@ -44,7 +44,7 @@ export const searchByUniversity = catchAsync(async (req, res, next) => {
   const feautures = new APIFeatures(
     universityModel.find({
       $or: [
-        { universityName: { $regex: searchRegex } },
+        { university_name: { $regex: searchRegex } },
         { location: { $regex: searchRegex } },
         { type: { $regex: searchRegex } },
         { notable_programs: { $regex: searchRegex } },

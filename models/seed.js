@@ -31,9 +31,9 @@ const importData = async () => {
       try {
         const uploadResult = await uploadImage(imagePath, 'university')
         universityData.push({
-          image: uploadResult.secure_url,
           ...entry,
-          
+          image: uploadResult,
+
         })
       } catch (uploadError) {
         console.error(`Failed to upload image for ${entry.university_name}:`, uploadError)

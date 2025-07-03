@@ -1,4 +1,5 @@
 import mongoose from "mongoose"
+import validator from "validator"
 
 const universitySchema = new mongoose.Schema(
       {
@@ -6,39 +7,36 @@ const universitySchema = new mongoose.Schema(
 
             university_name: {
                   type: String,
-                  required: true,
+                  required: [true, "Please include the University name"],
                   unique: true,
             },
             location: {
                   type: String,
-                  required: false,
             },
             type: {
                   type: String,
-                  required: false,
             },
             website: {
                   type: String,
-                  required: true,
+                  required: [true, "Please include the University website URL"],
             },
             email: {
                   type: String,
-                  required: false,
+                  unique: true,
+                  lowercase: true,
+                  required: [true, "Please include the University email"],
+                  validate: [validator.isEmail, "Please include a valid email."]
             },
             phone_number: {
                   type: String,
-                  required: false,
             },
             address: {
                   type: String,
-                  required: false,
-
             },
             notable_programs: [
 
                   {
                         type: String,
-                        required: false
                   }
 
             ],
@@ -46,16 +44,13 @@ const universitySchema = new mongoose.Schema(
             admission_requirements: [
                   {
                         type: String,
-                        required: false
                   }
             ],
             notes: {
                   type: String,
-                  required: false,
             },
             school_fees_range: {
                   type: String,
-                  required: false,
             }
       }
 )

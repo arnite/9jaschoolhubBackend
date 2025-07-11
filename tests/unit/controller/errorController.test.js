@@ -1,5 +1,7 @@
-const httpMocks = require('node-mocks-http');
-const errorController = require('../../../controllers/errorController');
+import { jest } from '@jest/globals';
+import httpMocks from 'node-mocks-http';
+import errorController from '../../../controllers/errorController.js'
+
 
 let req, res, next;
 

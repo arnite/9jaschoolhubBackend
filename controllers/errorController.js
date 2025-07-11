@@ -24,7 +24,7 @@ const sendErrorProd = (err, res) => {
 };
 
 
-module.exports = (err, req, res, next) => {
+const errorController = (err, req, res, next) => {
   err.statusCode = err.statusCode || 500;
   err.status = err.status || 'error';
 
@@ -35,3 +35,5 @@ module.exports = (err, req, res, next) => {
     sendErrorProd(error, res);
   }
 };
+
+export default errorController

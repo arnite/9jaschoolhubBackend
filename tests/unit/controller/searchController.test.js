@@ -162,3 +162,4 @@ describe('Search by University Controller', () => {
     expect(next).not.toHaveBeenCalled();
   });
 });
+

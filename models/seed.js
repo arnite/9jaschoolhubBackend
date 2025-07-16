@@ -41,10 +41,10 @@ const importData = async () => {
     }
 
     await universityModel.insertMany(universityData)
-    console.log("✅ Data Imported Successfully!")
+    console.log(" Data Imported Successfully!")
     process.exit()
   } catch (error) {
-    console.error("❌ Error importing data:", error)
+    console.error(" Error importing data:", error)
     process.exit(1)
   }
 }
@@ -52,10 +52,10 @@ const importData = async () => {
 const destroyData = async () => {
   try {
     await universityModel.deleteMany()
-    console.log("🗑️ Data Destroyed!")
+    console.log(" Data Destroyed!")
     process.exit()
   } catch (error) {
-    console.error("❌ Error destroying data:", error)
+    console.error(" Error destroying data:", error)
     process.exit(1)
   }
 }

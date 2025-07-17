@@ -109,34 +109,30 @@ describe('Get all university - getAllUniversities', () => {
         next = jest.fn()
     });
 
-    it('should return 200 and universities when found', async () => {
+    afterEach(() => {
+        jest.clearAllMocks(); // Clear all mocks after each test
+        jest.restoreAllMocks(); // Restore original implementations
+    });
 
+    it('should return 200 and universities when found', async () => {
         // Mock data
         const mockUniversities = [
             {name: 'University of Jos'},
             {name: 'University of Ibadan'}
         ]
 
-        const mockQuery = {
-            find: jest.fn().mockResolvedValue(mockUniversities),
-            sort: jest.fn().mockReturnThis(),
-            skip: jest.fn().mockReturnThis(),
-            limit: jest.fn().mockReturnThis()
-        };
-
         jest.spyOn(APIFeatures.prototype, 'filter').mockImplementation(function () {
-        this.query = Promise.resolve(mockUniversities);
-        return this;
+            this.query = Promise.resolve(mockUniversities);
+            return this;
         });
 
         jest.spyOn(APIFeatures.prototype, 'sort').mockImplementation(function () {
-        return this;
+            return this;
         });
 
         jest.spyOn(APIFeatures.prototype, 'paginate').mockImplementation(function () {
-        return this;
+            return this;
         });
-
 
         await getAllUniversities(req, res, next);
 
@@ -148,7 +144,39 @@ describe('Get all university - getAllUniversities', () => {
         });
     });
 
-})
+    it('should return 404 if no university is found', async () => {
+        // Mock data
+        const mockUniversities = []
+
+        jest.spyOn(APIFeatures.prototype, 'filter').mockImplementation(function () {
+            this.query = Promise.resolve(mockUniversities);
+            return this;
+        });
+
+        jest.spyOn(APIFeatures.prototype, 'sort').mockImplementation(function () {
+            return this;
+        });
+
+        jest.spyOn(APIFeatures.prototype, 'paginate').mockImplementation(function () {
+            return this;
+        });
+
+        await getAllUniversities(req, res, next);
+
+        // Expect next to be called with an AppError
+        expect(next).toHaveBeenCalledWith(
+            expect.objectContaining({
+                message: 'No university found',
+                statusCode: 404,
+                status: 'fail'
+            })
+        );
+
+        // Expect res.status and res.json NOT to be called
+        expect(res.status).not.toHaveBeenCalled();
+        expect(res.json).not.toHaveBeenCalled();
+    });
+});
 
 // Get University ID 
 describe('Get University ID - getUniversityById', () => {
@@ -197,7 +225,7 @@ describe('Get University ID - getUniversityById', () => {
 
         await getUniversityById(req, res, next)
 
-        expect(res.status).toHaveBeenCalledWith(201)
+        expect(res.status).toHaveBeenCalledWith(200)
         expect(res.json).toHaveBeenCalledWith({
             status: 'success',
             data: { university: mockUni}

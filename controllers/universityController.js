@@ -4,7 +4,7 @@ import AppError from '../utils/appError.js';
 import { isValidId } from '../utils/validId.js';
 import APIFeatures from '../utils/apiFeatures.js';
 
-//Create a university
+// Create a university
 export const createUniversity = catchAsync(async (req, res, next) => {
   // Find university by the website
   const universityExist = await universityModel.findOne({
@@ -35,10 +35,6 @@ export const getAllUniversities = catchAsync(async (req, res, next) => {
 
   const doc = await feautures.query;
 
-  if (!doc.length) {
-    return next(new AppError('No university found...', 404));
-  }
-
   if (!doc || doc.length <= 0) {
     return next(new AppError('No university found', 404));
   }
@@ -60,7 +56,7 @@ export const getUniversityById = catchAsync(async (req, res, next) => {
     return next(new AppError('University does not exist...', 404));
   }
 
-  res.status(201);
+  res.status(200);
   res.json({
       status: 'success',
       data: { university },

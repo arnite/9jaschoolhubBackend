@@ -5,7 +5,7 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import rateLimit from 'express-rate-limit';
 import DBconnect from './config/DBconnect.js';
-import errorController from './controllers/errorController.js';
+import globalErrorhandler from './controllers/errorController.js';
 import universityRouter from './routes/universityRoute.js';
 import searchProgrammeRouter from './routes/searchProgramme.js';
 import searchUniversityRouter from './routes/searchUniversity.js';
@@ -16,11 +16,7 @@ import { CloudinaryStorage } from 'multer-storage-cloudinary'
 
 dotenv.config();
 
-// DBconnect();
-
-if (process.env.NODE_ENV !== 'test') {
-  DBconnect();
-}
+DBconnect();
 
 const app = express();
 
@@ -108,34 +104,12 @@ app.use('/universityRoute', universityRouter);
 app.use('/searchProgramme', searchProgrammeRouter);
 app.use('/searchUniversity', searchUniversityRouter);
 
-// Global error handler (must be last)
-// app.use(globalErrorhandler)
-//app.use(errorController)
-
-app.use((err, req, res, next) => {
-  err.statusCode = err.statusCode || 500;
-  err.status = err.status || 'error';
-
-  res.status(err.statusCode).json({
-    status: err.status,
-    message: err.message
-  });
-});
-
-
-// // Starting the server
-// const PORT = process.env.PORT || 3000;
-
-// app.listen(PORT, () => {
-//   console.log(`App running on ${PORT}..`);
-// });
+// Error handling
+app.use(globalErrorhandler);
 
 // Starting the server
 const PORT = process.env.PORT || 3000;
-if (process.env.NODE_ENV !== 'test') {
-  app.listen(PORT, () => {
-    console.log(`App running on ${PORT}..`);
-  });
-}
 
-export default app
+app.listen(PORT, () => {
+  console.log(`App running on ${PORT}..`);
+});

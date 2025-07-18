@@ -4,11 +4,6 @@ import { MongoMemoryServer } from 'mongodb-memory-server';
 import app from '../../../app.js';
 import universityModel from '../../../models/universityModel.js';
 import { afterEach, beforeEach, describe, expect, it, jest } from '@jest/globals';
-import { API_KEY } from '../../../controllers/api_keys.js';
-import express from 'express';
-
-
-//jest.setTimeout(60000)
 
 let mongoServer;
 

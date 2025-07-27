@@ -25,6 +25,7 @@ export const createUniversity = catchAsync(async (req, res, next) => {
   });
 });
 
+
 // Get all universities
 export const getAllUniversities = catchAsync(async (req, res, next) => {
   const feautures = new APIFeatures(universityModel.find(), req.query)
@@ -55,9 +56,10 @@ export const getUniversityById = catchAsync(async (req, res, next) => {
     return next(new AppError('University does not exist...', 404));
   }
 
-  return res.status(200).json({
-    status: 'success',
-    data: { university },
+  res.status(200);
+  res.json({
+      status: 'success',
+      data: { university },
   });
 });
 

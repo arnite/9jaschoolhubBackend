@@ -12,7 +12,7 @@ export const searchByProgramme = catchAsync(async (req, res, next) => {
 
   const feautures = new APIFeatures(
     universityModel.find({
-      programmes: { $regex: new RegExp(search, 'i') }, // case-insensitive partial match
+      notable_programs: { $regex: new RegExp(search, 'i') }, // case-insensitive partial match
     }),
     req.query
   )
@@ -44,10 +44,10 @@ export const searchByUniversity = catchAsync(async (req, res, next) => {
   const feautures = new APIFeatures(
     universityModel.find({
       $or: [
-        { universityName: { $regex: searchRegex } },
+        { university_name: { $regex: searchRegex } },
         { location: { $regex: searchRegex } },
         { type: { $regex: searchRegex } },
-        { programmes: { $regex: searchRegex } },
+        { notable_programs: { $regex: searchRegex } },
       ],
     }),
     req.query

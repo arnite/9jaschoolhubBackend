@@ -32,6 +32,7 @@ const universitySchema = new mongoose.Schema({
   university_name: {
     type: String,
     required: true,
+    unique: true,
     trim: true
   },
   location: {
@@ -41,20 +42,25 @@ const universitySchema = new mongoose.Schema({
   type: {
     type: String,
     trim: true,
-    enum: ['Federal', 'State', 'Private'] // you can extend if needed
+    enum: ['Federal', 'State', 'Private']
   },
   website: {
     type: String,
-    trim: true
+    unique: true,
+    trim: true,
+    sparse: true
   },
   email: {
     type: String,
     trim: true,
-    lowercase: true
+    lowercase: true,
+    unique: true,
+    sparse: true
   },
   phone_number: {
     type: String,
-    trim: true
+    trim: true,
+    unique: true
   },
   address: {
     type: String,

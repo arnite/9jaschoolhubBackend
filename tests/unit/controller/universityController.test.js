@@ -32,6 +32,7 @@ describe('Create University Controller - createUniversity', () => {
                 body: {
                     university_name: 'Test University',
                     website: 'https://test.edu',
+                    email: 'test@university.edu'
                 },
             };
         });
@@ -47,9 +48,19 @@ describe('Create University Controller - createUniversity', () => {
 
             await createUniversity(req, res, next);
 
-            expect(universityModel.findOne).toHaveBeenCalledWith({ website: 'https://test.edu' });
+            // Fixed: Check for correct $or query structure
+            expect(universityModel.findOne).toHaveBeenCalledWith({
+                $or: [
+                    { university_name: 'Test University' },
+                    { email: 'test@university.edu' },
+                    { website: 'https://test.edu' }
+                ]
+            });
             expect(universityModel.create).not.toHaveBeenCalled();
-            expect(next).toHaveBeenCalledWith(expect.any(AppError));
+            expect(next).toHaveBeenCalledWith(expect.objectContaining({
+                message: 'University already exists',
+                statusCode: 400
+            }));
             expect(res.status).not.toHaveBeenCalled();
             expect(res.json).not.toHaveBeenCalled();
         });
@@ -60,7 +71,8 @@ describe('Create University Controller - createUniversity', () => {
             const mockUniv = {
                 _id: 'someId',
                 university_name: 'University of Jos',
-                website: 'https://unijos.edu'
+                website: 'https://unijos.edu',
+                email: 'info@unijos.edu'
             };
 
             const req = {
@@ -79,16 +91,46 @@ describe('Create University Controller - createUniversity', () => {
 
             await createUniversity(req, res, next);
 
-            expect(universityModel.findOne).toHaveBeenCalledWith({ website: mockUniv.website });
+            expect(universityModel.findOne).toHaveBeenCalledWith({
+                $or: [
+                    { university_name: mockUniv.university_name },
+                    { email: mockUniv.email },
+                    { website: mockUniv.website }
+                ]
+            });
             expect(universityModel.create).toHaveBeenCalledWith(mockUniv);
             expect(res.status).toHaveBeenCalledWith(201);
+            // Fixed: Match controller response structure
             expect(res.json).toHaveBeenCalledWith({
                 status: 'success',
-                data: { newUniversity: mockUniv }
+                data: { university: mockUniv }
             });
         });
     });
 
+    describe('Validation tests', () => {
+        it('should handle partial data correctly', async () => {
+            const req = {
+                body: {
+                    university_name: 'Test University'
+                    // No email or website
+                }
+            };
+
+            universityModel.findOne.mockResolvedValue(null);
+            universityModel.create.mockResolvedValue(req.body);
+
+            await createUniversity(req, res, next);
+
+            expect(universityModel.findOne).toHaveBeenCalledWith({
+                $or: [
+                    { university_name: 'Test University' },
+                    { email: undefined },
+                    { website: undefined }
+                ]
+            });
+        });
+    });
 });
 
 // Get All University Route Handler Unit Test
@@ -110,12 +152,11 @@ describe('Get all university - getAllUniversities', () => {
     });
 
     afterEach(() => {
-        jest.clearAllMocks(); // Clear all mocks after each test
-        jest.restoreAllMocks(); // Restore original implementations
+        jest.clearAllMocks();
+        jest.restoreAllMocks();
     });
 
     it('should return 200 and universities when found', async () => {
-        // Mock data
         const mockUniversities = [
             {name: 'University of Jos'},
             {name: 'University of Ibadan'}
@@ -145,7 +186,6 @@ describe('Get all university - getAllUniversities', () => {
     });
 
     it('should return 404 if no university is found', async () => {
-        // Mock data
         const mockUniversities = []
 
         jest.spyOn(APIFeatures.prototype, 'filter').mockImplementation(function () {
@@ -163,7 +203,6 @@ describe('Get all university - getAllUniversities', () => {
 
         await getAllUniversities(req, res, next);
 
-        // Expect next to be called with an AppError
         expect(next).toHaveBeenCalledWith(
             expect.objectContaining({
                 message: 'No university found',
@@ -172,7 +211,6 @@ describe('Get all university - getAllUniversities', () => {
             })
         );
 
-        // Expect res.status and res.json NOT to be called
         expect(res.status).not.toHaveBeenCalled();
         expect(res.json).not.toHaveBeenCalled();
     });
@@ -186,7 +224,7 @@ describe('Get University ID - getUniversityById', () => {
     beforeEach (() => {
         req = {
             params: {
-                id: 'test123'
+                id: '507f1f77bcf86cd799439011' // Valid ObjectId format
             },
         };
 
@@ -200,47 +238,68 @@ describe('Get University ID - getUniversityById', () => {
         universityModel.findById = jest.fn();
     })
 
-    it('Return 404 if university does not exist', async () => {
+    // Added: Test for invalid ID format
+    it('should return 400 for invalid ID format', async () => {
+        req.params.id = 'invalid-id';
+
+        await getUniversityById(req, res, next);
+
+        expect(next).toHaveBeenCalledWith(expect.objectContaining({
+            message: 'Invalid university ID format',
+            statusCode: 400
+        }));
+        expect(universityModel.findById).not.toHaveBeenCalled();
+        expect(res.status).not.toHaveBeenCalled();
+        expect(res.json).not.toHaveBeenCalled();
+    });
+
+    it('should return 404 if university does not exist', async () => {
 
         universityModel.findById.mockResolvedValue(null)
 
         await getUniversityById(req, res, next);
 
-        expect(next).toHaveBeenCalled();
-
-        const err = next.mock.calls[0][0]
-        expect(err).toBeInstanceOf(AppError)
-        expect(err.statusCode).toBe(404)
-        expect(err.message).toMatch('University does not exist')
+        expect(universityModel.findById).toHaveBeenCalledWith('507f1f77bcf86cd799439011');
+        expect(next).toHaveBeenCalledWith(expect.objectContaining({
+            message: 'University not found', // Updated to match controller
+            statusCode: 404
+        }));
+        expect(res.status).not.toHaveBeenCalled();
+        expect(res.json).not.toHaveBeenCalled();
     });
 
-    it( 'should return univerity with corresponding ID', async () => {
+    it('should return university with corresponding ID', async () => {
 
         const mockUni = {
-            id: 'test123',
-            university_name: 'Univerity of Jos'
+            _id: '507f1f77bcf86cd799439011',
+            university_name: 'University of Jos'
         }
 
         universityModel.findById.mockResolvedValue(mockUni)
 
         await getUniversityById(req, res, next)
 
+        expect(universityModel.findById).toHaveBeenCalledWith('507f1f77bcf86cd799439011');
         expect(res.status).toHaveBeenCalledWith(200)
         expect(res.json).toHaveBeenCalledWith({
             status: 'success',
             data: { university: mockUni}
         })
+        expect(next).not.toHaveBeenCalled();
     })
 })
 
-// Update Univerity by ID
-describe('Update Univerity by ID - updatedUniversity', () => {
+// Update University by ID
+describe('Update University by ID - updateUniversity', () => {
     let req, res, next;
 
     beforeEach (() => {
         req = {
             params: {
-                id: 'test123'
+                id: '507f1f77bcf86cd799439011' // Valid ObjectId
+            },
+            body: {
+                university_name: 'Updated University Name'
             }
         };
 
@@ -251,52 +310,104 @@ describe('Update Univerity by ID - updatedUniversity', () => {
 
         next = jest.fn();
 
-        universityModel.findOneAndUpdate = jest.fn();
+        // Fixed: Use correct method name
+        universityModel.findByIdAndUpdate = jest.fn();
+        universityModel.findOne = jest.fn();
     })
 
-    it('should return 404 if univerity does not exist', async () => {
-
-        universityModel.findOneAndUpdate.mockResolvedValue(null)
+    // Added: Test for invalid ID format
+    it('should return 400 for invalid ID format', async () => {
+        req.params.id = 'invalid-id';
 
         await updateUniversity(req, res, next);
 
-        expect(next).toHaveBeenCalled()
+        expect(next).toHaveBeenCalledWith(expect.objectContaining({
+            message: 'Invalid university id',
+            statusCode: 400
+        }));
+        expect(universityModel.findOne).not.toHaveBeenCalled();
+        expect(universityModel.findByIdAndUpdate).not.toHaveBeenCalled();
+    });
 
-        const err = next.mock.calls[0][0]
-        expect(err).toBeInstanceOf(AppError)
-        expect(err.statusCode).toBe(404)
-        expect(err.message).toMatch('University do not exist...')
+    // Added: Test for duplicate check
+    it('should return 400 if university with same details already exists', async () => {
+        const existingUniversity = {
+            _id: 'different-id',
+            university_name: 'Updated University Name'
+        };
+
+        universityModel.findOne.mockResolvedValue(existingUniversity);
+
+        await updateUniversity(req, res, next);
+
+        expect(universityModel.findOne).toHaveBeenCalledWith({
+            _id: { $ne: '507f1f77bcf86cd799439011' },
+            $or: [
+                { university_name: 'Updated University Name' },
+                { email: undefined },
+                { website: undefined }
+            ]
+        });
+        expect(next).toHaveBeenCalledWith(expect.objectContaining({
+            message: 'University with these details exists',
+            statusCode: 400
+        }));
+        expect(universityModel.findByIdAndUpdate).not.toHaveBeenCalled();
+    });
+
+    it('should return 404 if university does not exist', async () => {
+
+        universityModel.findOne.mockResolvedValue(null); // No duplicate
+        universityModel.findByIdAndUpdate.mockResolvedValue(null) // University not found
+
+        await updateUniversity(req, res, next);
+
+        expect(universityModel.findByIdAndUpdate).toHaveBeenCalledWith(
+            '507f1f77bcf86cd799439011',
+            req.body,
+            { new: true, runValidators: true }
+        );
+        expect(next).toHaveBeenCalledWith(expect.objectContaining({
+            message: 'University not found', // Updated to match controller
+            statusCode: 404
+        }));
     });
 
     it('should update university by id', async () => {
 
         const mockUpdateUni = {
-            id: 'test123',
+            _id: '507f1f77bcf86cd799439011',
             university_name: 'University of Jos, Nigeria'
         }
 
-        universityModel.findOneAndUpdate.mockResolvedValue(mockUpdateUni);
+        universityModel.findOne.mockResolvedValue(null); // No duplicate
+        universityModel.findByIdAndUpdate.mockResolvedValue(mockUpdateUni);
 
         await updateUniversity(req, res, next);
 
+        expect(universityModel.findByIdAndUpdate).toHaveBeenCalledWith(
+            '507f1f77bcf86cd799439011',
+            req.body,
+            { new: true, runValidators: true }
+        );
         expect(res.status).toHaveBeenCalledWith(200)
         expect(res.json).toHaveBeenCalledWith({
             status: 'success',
             data: { updatedUniversity: mockUpdateUni}
         })
+        expect(next).not.toHaveBeenCalled();
     })
 })
 
 
 // Delete University with ID
-
-describe('Delete University By ID', () => {
+describe('Delete University By ID - deleteUniversity', () => {
     let req, res, next;
 
     beforeEach(() => {
         req = {
             params: {
-                id: 'test123'
+                id: '507f1f77bcf86cd799439011' // Valid ObjectId
             }
         }
 
@@ -307,38 +418,56 @@ describe('Delete University By ID', () => {
 
         next = jest.fn()
 
-        universityModel.findOneAndDelete = jest.fn()
+        // Fixed: Use correct method name
+        universityModel.findByIdAndDelete = jest.fn()
     })
 
-    it('should return 404 if university do not exist', async () => {
-
-        universityModel.findOneAndDelete.mockResolvedValue(null);
-
-        await deleteUniversity(req, res, next)
-
-        expect(next).toHaveBeenCalled()
-
-        const err = next.mock.calls[0][0]
-        expect(err).toBeInstanceOf(AppError)
-        expect(err.statusCode).toBe(404)
-        expect(err.message).toMatch('University do not exist....')
-    });
-
-    it('should return 201 if a university is successfully deleted', async () => {
-
-        const mockUniversity = {
-            id: 'test123',
-            university_name: 'University of Ibadan'
-        }
-
-        universityModel.findOneAndDelete.mockResolvedValue(mockUniversity);
+    // Added: Test for invalid ID format
+    it('should return 400 for invalid ID format', async () => {
+        req.params.id = 'invalid-id';
 
         await deleteUniversity(req, res, next);
 
+        expect(next).toHaveBeenCalledWith(expect.objectContaining({
+            message: 'Invalid university ID',
+            statusCode: 400
+        }));
+        expect(universityModel.findByIdAndDelete).not.toHaveBeenCalled();
+    });
+
+    it('should return 404 if university does not exist', async () => {
+
+        universityModel.findByIdAndDelete.mockResolvedValue(null);
+
+        await deleteUniversity(req, res, next)
+
+        expect(universityModel.findByIdAndDelete).toHaveBeenCalledWith('507f1f77bcf86cd799439011');
+        expect(next).toHaveBeenCalledWith(expect.objectContaining({
+            message: 'University not found', // Updated to match controller
+            statusCode: 404
+        }));
+        expect(res.status).not.toHaveBeenCalled();
+        expect(res.json).not.toHaveBeenCalled();
+    });
+
+    it('should return 204 if a university is successfully deleted', async () => {
+
+        const mockUniversity = {
+            _id: '507f1f77bcf86cd799439011',
+            university_name: 'University of Ibadan'
+        }
+
+        universityModel.findByIdAndDelete.mockResolvedValue(mockUniversity);
+
+        await deleteUniversity(req, res, next);
+
+        expect(universityModel.findByIdAndDelete).toHaveBeenCalledWith('507f1f77bcf86cd799439011');
         expect(res.status).toHaveBeenCalledWith(204)
         expect(res.json).toHaveBeenCalledWith({
             status: 'success',
             data: null
         })
+        expect(next).not.toHaveBeenCalled();
     })
 })
+

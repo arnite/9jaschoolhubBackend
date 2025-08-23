@@ -64,16 +64,16 @@ The server will run on the following URL depending on the environment:
 
 ### **UNIVERSITIES MANAGEMENT**
 
-- **GET `/universityRoute`**
+- **GET `/universityRoute`** <br/>
   _Retrieve all University_
 
-- **POST `/universityRoute`**
+- **POST `/universityRoute`** <br/>
   _Create University_
 
-- **PATCH `/universityRoute/:id`**
+- **PATCH `/universityRoute/:id`** <br/>
   _Update University by id_
 
-- **DELETE `/universityRoute/:id`**
+- **DELETE `/universityRoute/:id`** <br/>
   _Delete University by id_
 
 ## 6. API Documentation

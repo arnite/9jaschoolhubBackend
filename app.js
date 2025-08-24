@@ -12,7 +12,7 @@ import searchUniversityRouter from './routes/searchUniversity.js';
 import cloudinary from './models/lib/cloudinary.js';
 import { upload } from './models/lib/multer.js';
 import streamifier from 'streamifier';
-import { CloudinaryStorage } from 'multer-storage-cloudinary'
+import { CloudinaryStorage } from 'multer-storage-cloudinary';
 
 dotenv.config();
 
@@ -63,8 +63,6 @@ const storage = new CloudinaryStorage({
     allowed_formats: ['jpg', 'png', 'jpeg'],
   },
 });
-
-
 
 // Endpoint to upload file
 app.post('/upload', upload.single('image'), (req, res) => {

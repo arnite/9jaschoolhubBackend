@@ -2,6 +2,7 @@ pipeline {
     agent {
         docker {
             image 'node:18'
+            args '-v /var/run/docker.sock:/var/run/docker.sock'  // Mount host Docker socket
         }
     }
 
@@ -16,6 +17,19 @@ pipeline {
     }
 
     stages {
+
+        stage('Install Git') {
+            steps {
+                sh 'apt-get update && apt-get install -y git'
+            }
+        }
+
+        stage('Clean Workspace') {
+            steps {
+                deleteDir()  // ensure fresh workspace
+            }
+        }
+
         stage('Checkout') {
             steps {
                 git branch: params.BRANCH, 
@@ -64,5 +78,6 @@ pipeline {
                 }
             }
         }
+
     }
 }

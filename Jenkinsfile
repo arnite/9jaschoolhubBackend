@@ -1,5 +1,9 @@
 pipeline {
-    agent any
+    agent {
+        docker {
+            image 'node:18'
+        }
+    }
 
     environment {
         REGISTRY = "162.246.19.130:8083"     // Nexus Docker registry

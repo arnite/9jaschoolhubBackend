@@ -11,7 +11,7 @@ pipeline {
         string(name: 'BRANCH', defaultValue: 'dev', description: 'Git branch to build')
     }
 
-    stages {
+  stages { 
         stage('Checkout') {
             steps {
                 git branch: params.BRANCH, 
@@ -60,5 +60,6 @@ pipeline {
                 }
             }
         }
+
     }
 }

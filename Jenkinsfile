@@ -2,19 +2,25 @@ pipeline {
     agent any
 
     environment {
-        REGISTRY = "162.246.19.130:8083"     // Nexus Docker registry
-        IMAGE = "my-node-app"                 // e.g., my-node-app
-        DEPLOY_SERVER = "devops@162.246.19.130"      // SSH user@host
+        REGISTRY = "162.246.19.130:8083"
+        IMAGE = "my-node-app"
+        DEPLOY_SERVER = "devops@162.246.19.130"
     }
 
     parameters {
         string(name: 'BRANCH', defaultValue: 'dev', description: 'Git branch to build')
     }
 
-  stages { 
+    stages {
+        stage('Clean Workspace') {
+            steps {
+                deleteDir() // ensures a fresh workspace
+            }
+        }
+
         stage('Checkout') {
             steps {
-                git branch: params.BRANCH, 
+                git branch: params.BRANCH,
                     url: 'https://github.com/arnite/9jaschoolhubBackend.git'
             }
         }
@@ -60,6 +66,5 @@ pipeline {
                 }
             }
         }
-
     }
 }

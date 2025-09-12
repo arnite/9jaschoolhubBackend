@@ -56,5 +56,29 @@ pipeline {
     }
 }
 
+stage('Deploy to Server') {
+    steps {
+        script {
+            // 🔑 Ensure you create SSH credentials in Jenkins with ID "server-ssh"
+            withCredentials([sshUserPrivateKey(
+                credentialsId: 'server-ssh',
+                keyFileVariable: 'SSH_KEY',
+                usernameVariable: 'SSH_USER'
+            )]) {
+                sh """
+                    ssh -o StrictHostKeyChecking=no -i $SSH_KEY $SSH_USER@${DEPLOY_SERVER} '
+                        docker login ${REGISTRY} -u ${NEXUS_USER} -p ${NEXUS_PASS} &&
+                        docker pull ${REGISTRY}/${IMAGE}:${BUILD_NUMBER} &&
+                        docker stop ${IMAGE} || true &&
+                        docker rm ${IMAGE} || true &&
+                        docker run -d --name ${IMAGE} -p 3000:3000 ${REGISTRY}/${IMAGE}:${BUILD_NUMBER}
+                    '
+                """
+            }
+        }
+    }
+}
+
+
     }
 }

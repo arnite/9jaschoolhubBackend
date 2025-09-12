@@ -34,7 +34,7 @@ pipeline {
 
         stage('Docker Build') {
             steps {
-                sh "docker build -t ${IMAGE}:${BUILD_NUMBER} ."
+                sh "docker build -t ${REGISTRY}/${IMAGE}:${BUILD_NUMBER} ."
             }
         }
 

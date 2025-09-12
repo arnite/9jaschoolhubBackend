@@ -59,15 +59,21 @@ pipeline {
 stage('Deploy to Server') {
     steps {
         script {
-            // 🔑 Ensure you create SSH credentials in Jenkins with ID "server-ssh"
-            withCredentials([sshUserPrivateKey(
-                credentialsId: 'server-ssh',
-                keyFileVariable: 'SSH_KEY',
-                usernameVariable: 'SSH_USER'
-            )]) {
+            withCredentials([
+                sshUserPrivateKey(
+                    credentialsId: 'server-ssh',
+                    keyFileVariable: 'SSH_KEY',
+                    usernameVariable: 'SSH_USER'
+                ),
+                usernamePassword(
+                    credentialsId: 'nexus-cred',
+                    usernameVariable: 'NEXUS_USER',
+                    passwordVariable: 'NEXUS_PASS'
+                )
+            ]) {
                 sh """
-                    ssh -o StrictHostKeyChecking=no -i $SSH_KEY $SSH_USER@${DEPLOY_SERVER} '
-                        docker login ${REGISTRY} -u ${NEXUS_USER} -p ${NEXUS_PASS} &&
+                    ssh -o StrictHostKeyChecking=no -i $SSH_KEY $SSH_USER@162.246.19.130 '
+                        echo "$NEXUS_PASS" | docker login ${REGISTRY} -u "$NEXUS_USER" --password-stdin &&
                         docker pull ${REGISTRY}/${IMAGE}:${BUILD_NUMBER} &&
                         docker stop ${IMAGE} || true &&
                         docker rm ${IMAGE} || true &&

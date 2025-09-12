@@ -4,7 +4,7 @@ pipeline {
     environment {
         REGISTRY = "162.246.19.130:8083"
         IMAGE = "my-node-app"
-        DEPLOY_SERVER = "devops@162.246.19.130"
+        DEPLOY_SERVER = "root@162.246.19.130"
     }
 
     parameters {

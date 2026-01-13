@@ -1,64 +1,87 @@
-import mongoose from "mongoose"
+import mongoose from 'mongoose';
 
+const courseSchema = new mongoose.Schema({
+  course: {
+    type: String,
+    required: true,
+    trim: true,
+  },
+  requirements: {
+    type: String,
+    trim: true,
+  },
+});
 
+const notableProgramSchema = new mongoose.Schema({
+  Faculty: {
+    type: String,
+    required: true,
+    trim: true,
+  },
+  Courses: {
+    type: [courseSchema],
+    default: [],
+  },
+});
 
 const universitySchema = new mongoose.Schema(
   {
     image: {
-            type: String,
-            required: false,
-           }, 
-
-    universityName: {
-                    type: String,
-                    required: true,
-                    unique: true,
-                    },
+      type: String,
+      trim: true,
+    },
+    university_name: {
+      type: String,
+      required: true,
+      unique: true,
+      trim: true,
+    },
     location: {
-              type: String,
-              required: true,
-              },
+      type: String,
+      trim: true,
+    },
     type: {
-          type: String,
-          required: true,
-          },
+      type: String,
+      trim: true,
+      enum: ['Federal', 'State', 'Private'],
+    },
     website: {
-              type: String,
-              required: true,
-             },
+      type: String,
+      unique: true,
+      trim: true,
+      sparse: true,
+    },
     email: {
-            type: String,
-            required: false,
-           },
-    phone: {
-            type: Number,
-            required: false,
-           },
+      type: String,
+      trim: true,
+      lowercase: true,
+      unique: true,
+      sparse: true,
+      set: (v) => (v === '' ? null : v), // auto-convert "" to null
+    },
+    phone_number: {
+      type: String,
+      trim: true,
+    },
     address: {
-              type: String,
-              required: false,
-      
-             },
-    programmes: [
-                   
-                   {
-                    type: String,
-                    required: false
-                    }           
-                 
-               ],
-                
-    requirements: [
-                    {
-                    type: String,
-                    required: false
-                    }
-                  ],
+      type: String,
+      trim: true,
+    },
+    notable_programs: {
+      type: [notableProgramSchema],
+      default: [],
+    },
     notes: {
-            type: String,
-            required: false,
-           }
-        }
-            )
+      type: String,
+      trim: true,
+    },
+    school_fees_range: {
+      type: String,
+      trim: true,
+    },
+  },
+  { timestamps: true }
+);
 
-export default mongoose.models.universityModel || mongoose.model("universityModel", universitySchema);
+export default mongoose.models.universityModel ||
+  mongoose.model('universityModel', universitySchema);

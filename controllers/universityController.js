@@ -1,0 +1,100 @@
+import catchAsync from '../utils/catchAsync.js';
+import universityModel from '../models/universityModel.js';
+import AppError from '../utils/appError.js';
+import { isValidId } from '../utils/validId.js';
+import APIFeatures from '../utils/apiFeatures.js';
+
+// Create a university
+export const createUniversity = catchAsync(async (req, res, next) => {
+  // Find university by the website
+  const universityExist = await universityModel.findOne({
+    website: req.body.website,
+  });
+
+  // Check if university exists
+  if (universityExist) {
+    return next(new AppError('University already exists...', 400));
+  }
+
+  // Create new university
+  const newUniversity = await universityModel.create(req.body);
+
+  return res.status(201).json({
+    status: 'success',
+    data: { newUniversity },
+  });
+});
+
+
+// Get all universities
+export const getAllUniversities = catchAsync(async (req, res, next) => {
+  const feautures = new APIFeatures(universityModel.find(), req.query)
+    .filter()
+    .sort()
+    .paginate();
+
+  const doc = await feautures.query;
+
+  if (!doc || doc.length <= 0) {
+    return next(new AppError('No university found', 404));
+  }
+
+  return res.status(200).json({
+    status: 'success',
+    count: doc.length,
+    data: { doc },
+  });
+});
+
+// Get university by ID
+export const getUniversityById = catchAsync(async (req, res, next) => {
+  const { id } = req.params;
+
+  const university = await universityModel.findById(id);
+
+  if (!university) {
+    return next(new AppError('University does not exist...', 404));
+  }
+
+  res.status(200);
+  res.json({
+      status: 'success',
+      data: { university },
+  });
+});
+
+// Update university with ID
+export const updateUniversity = catchAsync(async (req, res, next) => {
+  const { id } = req.params;
+
+  const updatedUniversity = await universityModel.findByIdAndUpdate(
+    id,
+    { $set: req.body },
+    { new: true, runValidators: true }
+  );
+
+  if (!updatedUniversity) {
+    return next(new AppError('University do not exist....', 404));
+  }
+
+  return res.status(200).json({
+    status: 'success',
+    data: { updatedUniversity },
+  });
+});
+
+// Delete university with ID
+export const deleteUniversity = catchAsync(async (req, res, next) => {
+  const { id } = req.params;
+
+  const deletedUniversity = await universityModel.findByIdAndDelete(id);
+
+  if (!deletedUniversity) {
+    return next(new AppError('University do not exist....', 404));
+  }
+
+  return res.status(204).json({
+    status: 'success',
+    data: null,
+  });
+});

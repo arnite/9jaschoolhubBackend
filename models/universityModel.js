@@ -1,64 +1,77 @@
 import mongoose from "mongoose"
 
+const courseSchema = new mongoose.Schema({
+  course: {
+    type: String,
+    required: true,
+    trim: true
+  },
+  requirements: {
+    type: String,
+    trim: true
+  }
+});
 
+const notableProgramSchema = new mongoose.Schema({
+  Faculty: {
+    type: String,
+    required: true,
+    trim: true
+  },
+  Courses: {
+    type: [courseSchema],
+    default: []
+  }
+});
 
-const universitySchema = new mongoose.Schema(
-  {
-    image: {
-            type: String,
-            required: false,
-           }, 
-
-    universityName: {
-                    type: String,
-                    required: true,
-                    unique: true,
-                    },
-    location: {
-              type: String,
-              required: true,
-              },
-    type: {
-          type: String,
-          required: true,
-          },
-    website: {
-              type: String,
-              required: true,
-             },
-    email: {
-            type: String,
-            required: false,
-           },
-    phone: {
-            type: Number,
-            required: false,
-           },
-    address: {
-              type: String,
-              required: false,
-      
-             },
-    programmes: [
-                   
-                   {
-                    type: String,
-                    required: false
-                    }           
-                 
-               ],
-                
-    requirements: [
-                    {
-                    type: String,
-                    required: false
-                    }
-                  ],
-    notes: {
-            type: String,
-            required: false,
-           }
-        }
-            )
+const universitySchema = new mongoose.Schema({
+  image: {
+    type: String,
+    trim: true
+  },
+  university_name: {
+    type: String,
+    required: true,
+    trim: true
+  },
+  location: {
+    type: String,
+    trim: true
+  },
+  type: {
+    type: String,
+    trim: true,
+    enum: ['Federal', 'State', 'Private'] // you can extend if needed
+  },
+  website: {
+    type: String,
+    trim: true
+  },
+  email: {
+    type: String,
+    trim: true,
+    lowercase: true
+  },
+  phone_number: {
+    type: String,
+    trim: true
+  },
+  address: {
+    type: String,
+    trim: true
+  },
+  notable_programs: {
+    type: [notableProgramSchema],
+    default: []
+  },
+  notes: {
+    type: String,
+    trim: true
+  },
+  school_fees_range: {
+    type: String,
+    trim: true
+  }
+}, { timestamps: true });
 
 export default mongoose.models.universityModel || mongoose.model("universityModel", universitySchema);
